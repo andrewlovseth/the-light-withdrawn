@@ -1,0 +1,8 @@
+@use "./abstracts" as *;
+
+.site-footer {
+    padding: $spacing-600 0;
+    background: $navy;
+    color: $gray-0;
+    border-top: $spacing-100 solid $goldenrod;
+}

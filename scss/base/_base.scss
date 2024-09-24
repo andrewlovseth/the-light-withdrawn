@@ -1,3 +1,13 @@
+@use "./abstracts" as *;
+
 body {
-    background: #fafafa;
+    background: $cream;
+    border-top: $spacing-200 solid $blue;
+}
+
+.site {
+    display: grid;
+    gap: 0;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 }

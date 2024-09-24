@@ -1,0 +1,20 @@
+@use "./abstracts" as *;
+
+.site-header__desktop {
+    padding: $spacing-600 0;
+
+    .site-nav__left {
+        grid-column: 2 / span 4;
+    }
+
+    .site-logo {
+        grid-column: 6 / span 4;
+        text-align: center;
+        align-self: center;
+    }
+
+    .site-nav__right {
+        grid-column: 10 / span 4;
+        text-align: right;
+    }
+}

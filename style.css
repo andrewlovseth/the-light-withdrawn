@@ -93,11 +93,19 @@ time {
 }
 
 body {
-  background: #fafafa;
+  background: #faf7f3;
+  border-top: 0.5rem solid #8acad7;
+}
+
+.site {
+  display: grid;
+  gap: 0;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
 
 a {
-  color: blue;
+  color: #3d3d3d;
   text-decoration: none;
 }
 
@@ -197,4 +205,27 @@ a {
 .copy-3 {
   font-size: 17px;
   line-height: 1.5;
+}
+
+.site-header__desktop {
+  padding: 2rem 0;
+}
+.site-header__desktop .site-nav__left {
+  grid-column: 2/span 4;
+}
+.site-header__desktop .site-logo {
+  grid-column: 6/span 4;
+  text-align: center;
+  align-self: center;
+}
+.site-header__desktop .site-nav__right {
+  grid-column: 10/span 4;
+  text-align: right;
+}
+
+.site-footer {
+  padding: 2rem 0;
+  background: #313948;
+  color: #ffffff;
+  border-top: 0.25rem solid #e6ba7b;
 }

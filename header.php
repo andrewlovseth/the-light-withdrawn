@@ -14,6 +14,8 @@
 
 	<header class="site-header">
 
+		<?php get_template_part('components/header/desktop-nav'); ?>
+
 	</header>
     
     <main class="site-content">

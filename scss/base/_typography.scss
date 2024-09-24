@@ -1,0 +1,25 @@
+@use "./abstracts" as *;
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+::-moz-selection {
+    background: blue;
+    text-shadow: none;
+}
+
+::selection {
+    background: blue;
+    color: white;
+    text-shadow: none;
+}

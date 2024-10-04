@@ -29,7 +29,10 @@
     <?php endif; ?>
 
     <div class="site-logo site-logo__desktop">
-        LOGO
+        <?php
+            $logo = get_field('header_logo', 'options');
+            echo wp_get_attachment_image($logo['ID'], 'full');
+        ?>
     </div>
 
 

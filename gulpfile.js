@@ -1,10 +1,12 @@
 import gulp from "gulp";
-import dartSass from "gulp-dart-sass";
+import gulpSass from "gulp-sass";
+import sass from "sass";
 import sourcemaps from "gulp-sourcemaps";
 import autoprefixer from "gulp-autoprefixer";
 import browserSyncPackage from "browser-sync";
 
 const browserSync = browserSyncPackage.create();
+const dartSass = gulpSass(sass);
 
 function errorlog(err) {
     console.error(err.message);
@@ -14,6 +16,7 @@ function errorlog(err) {
 function style() {
     return gulp
         .src("scss/style.scss")
+        .pipe(sourcemaps.init())
         .pipe(dartSass().on("error", errorlog))
         .pipe(autoprefixer())
         .pipe(sourcemaps.write())

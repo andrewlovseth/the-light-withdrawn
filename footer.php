@@ -1,21 +1,14 @@
 	</main> <?php //.site-content ?>
 
 	<footer class="site-footer content-grid">
-		<ul class="site-nav site-nav__footer" role="nav">
-			
-		</ul>
+		<?php get_template_part('components/footer/nav'); ?>
 
-		<div class="site-footer__buy-btn">
+		<?php get_template_part('components/footer/cta'); ?>
 
-		</div>
+		<?php get_template_part('components/footer/social-links'); ?>
 
-		<ul class="site-footer_social" role="nav">
+		<?php get_template_part('components/footer/copyright'); ?>
 
-		</ul>
-
-		<div class="site-footer__copyright">
-
-		</div>
 	</footer>
 
 <?php wp_footer(); ?>

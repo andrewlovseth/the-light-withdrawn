@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap");
+
+$garamond: "EB Garamond", serif;
+$sometype-mono: "Sometype Mono", monospace;
+
+// Ideal Sans
+@font-face {
+    font-family: "ideal_sansbook";
+    src: url("idealsans-book-pro-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+$ideal-sans: "ideal_sansbook", sans-serif;
+
+@font-face {
+    font-family: "golden_wfregular";
+    src: url("fonts/goldenwf-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+$golden-wf: "golden_wfregular", sans-serif;

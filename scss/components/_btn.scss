@@ -1,0 +1,12 @@
+@use "./abstracts" as *;
+
+.btn {
+    display: inline-block;
+    font-family: $golden-wf;
+    text-transform: uppercase;
+    background: $blue;
+    color: $navy;
+    line-height: 0.875em;
+    font-size: 0.75rem;
+    padding: $spacing-200 $spacing-300;
+}

@@ -44,5 +44,10 @@
         font-family: $golden-wf;
         text-transform: uppercase;
         font-size: 0.75rem;
+        transition: all 200ms ease;
+
+        &:hover {
+            color: $blue;
+        }
     }
 }

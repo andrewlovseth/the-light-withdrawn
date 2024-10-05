@@ -1,0 +1,97 @@
+@use "./abstracts" as *;
+
+.gallery {
+    background: $navy;
+    color: $cream;
+
+    a {
+        color: $cream;
+    }
+
+    @media (width <= 992px) {
+        padding-top: $spacing-600 !important;
+    }
+
+    &__items {
+        padding: $spacing-900 0;
+        display: grid;
+        gap: $spacing-700 $spacing-800;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    }
+
+    &__item {
+        display: grid;
+        place-items: center;
+    }
+
+    &__link {
+        display: block;
+
+        &:hover {
+            .gallery__photo {
+                border-color: $blue;
+            }
+
+            .gallery__name {
+                color: $blue;
+            }
+        }
+    }
+
+    &__photo {
+        border-radius: 50%;
+        border: 1px solid transparent;
+        width: 14rem;
+        height: 14rem;
+        display: flex;
+        place-items: center;
+        transition: all 600ms ease;
+
+        img {
+            border-radius: 50%;
+            width: 12.5rem;
+            margin: 0 auto;
+        }
+    }
+
+    &__name {
+        padding-top: $spacing-400;
+        text-align: center;
+        font-size: $type-size-400;
+        font-variant: small-caps;
+        letter-spacing: 0.05em;
+        line-height: 1;
+        transition: all 300ms ease;
+    }
+
+    &__pagination {
+        padding-bottom: $spacing-900;
+
+        &-items {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: $spacing-900;
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: $spacing-800;
+            height: $spacing-800;
+            border-radius: 50%;
+            font-family: $golden-wf;
+            font-size: $type-size-500;
+            transition: all 300ms ease;
+            color: $cream;
+            background: transparent;
+
+            &:hover,
+            &.active {
+                background: $blue;
+                color: $navy;
+            }
+        }
+    }
+}

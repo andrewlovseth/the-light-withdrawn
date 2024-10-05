@@ -1,0 +1,136 @@
+@use "./abstracts" as *;
+
+.hero {
+    position: relative;
+    &__photos {
+        display: grid;
+        position: relative;
+
+        &.transitioned {
+            .hero__enhanced {
+                grid-template-rows: 1fr;
+
+                &-wrapper {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__photo {
+        aspect-ratio: 640 / 341;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__original {
+        grid-column: 1;
+        grid-row: 1;
+        z-index: 1;
+    }
+
+    &__enhanced {
+        grid-column: 1;
+        grid-row: 1;
+        z-index: 2;
+        position: relative;
+
+        &-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            overflow: hidden;
+            z-index: 1;
+            transition: height 3200ms ease-in-out;
+        }
+    }
+
+    &__info {
+        @include mq(desktop-small) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            transform-origin: bottom;
+        }
+
+        &-wrapper {
+            background: $cream;
+            border: 0.25rem solid $blue;
+            padding: $spacing-700 $spacing-800;
+            text-align: center;
+
+            @include mq(desktop-small) {
+                transform: translateY(50%);
+                z-index: 4;
+                position: relative;
+                max-width: 60rem;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &__headline {
+        font-weight: 500;
+        font-size: $type-size-700;
+        font-variant: small-caps;
+        letter-spacing: 0.1em;
+        padding-bottom: $spacing-600;
+    }
+
+    &__copy {
+    }
+
+    &__form {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+
+        &-wrapper {
+            padding: $spacing-600 0;
+        }
+
+        &-input {
+            color: $gray-950;
+            font-family: $sometype-mono;
+            border: 2px solid $blue;
+            padding: $spacing-300 $spacing-400;
+            width: 20rem;
+            font-size: $type-size-200;
+
+            @include placeholder {
+                font-style: italic;
+                color: $gray-500;
+            }
+        }
+
+        &-btn {
+            appearance: none;
+            border: none;
+            display: inline-block;
+            font-family: $golden-wf;
+            text-transform: uppercase;
+            background: $blue;
+            color: $navy;
+            line-height: 0.875em;
+            font-size: 0.875rem;
+            padding: $spacing-200 $spacing-600;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__credits {
+        p {
+            font-style: italic;
+        }
+    }
+}

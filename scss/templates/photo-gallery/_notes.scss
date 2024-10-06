@@ -1,3 +1,292 @@
-.notes {
-    padding: $spacing-900 0;
+@use "./abstracts" as *;
+
+.note {
+    padding: $spacing-800 0;
+    border-top: $spacing-200 solid $goldenrod;
+
+    &__headline {
+        text-align: center;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-family: $golden-wf;
+    }
+
+    &__copy {
+        text-align: center;
+        text-wrap: balance;
+        padding: $spacing-600 0 $spacing-800;
+
+        @include mq(desktop-small) {
+            grid-column: 3 / span 10;
+        }
+    }
+
+    &__instructions {
+        text-align: center;
+        text-wrap: balance;
+        padding-bottom: $spacing-600;
+        font-style: italic;
+
+        @include mq(desktop-small) {
+            grid-column: 4 / span 8;
+        }
+    }
+
+    &__photo {
+        position: relative;
+        @include mq(desktop-small) {
+            grid-column: 4 / span 8;
+        }
+    }
+
+    &__feature {
+        position: absolute;
+
+        &-ring {
+            border: 1px solid $blue;
+            opacity: 0;
+            animation: pulsate 3s ease-out infinite;
+            border-radius: 50%;
+            position: absolute;
+            margin: -0.75rem auto auto -0.75rem;
+            top: 50%;
+            left: 50%;
+            width: $spacing-500;
+            height: $spacing-500;
+        }
+
+        &-anchor {
+            display: block;
+            width: $spacing-400;
+            height: $spacing-400;
+            background-color: rgba($blue, 0.85);
+            border: 1px solid $blue;
+            border-radius: 50%;
+            transform-origin: 50% 50%;
+            transition: background-color 0.2s ease-in, transform 0.1s ease-out;
+            position: relative;
+            box-shadow: 2px 4px 8px rgba($gray-1000, 0.2);
+
+            &:hover {
+                background-color: rgba($blue, 1);
+                .note__feature-ring {
+                    animation: none;
+                }
+            }
+        }
+
+        &-modal {
+            display: none;
+            position: absolute;
+            bottom: 1.5rem;
+            left: 3.5rem;
+            width: 24rem;
+            z-index: 10;
+
+            &.active {
+                display: block;
+
+                @media (width <= 992px) {
+                    position: fixed;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    place-items: center;
+                    display: grid;
+                }
+            }
+
+            &-line {
+                position: absolute;
+                width: 117px;
+                height: 2px;
+                background: $blue;
+                bottom: 39px;
+                left: -73px;
+                rotate: 120deg;
+
+                @media (width <= 992px) {
+                    display: none;
+                }
+            }
+
+            &-wrapper {
+                background: $cream;
+                width: 100%;
+                max-width: 100%;
+                padding: $spacing-600;
+                border: 2px solid $blue;
+                box-shadow: 2px 4px 8px rgba($gray-1000, 0.2);
+                position: relative;
+
+                @media (width <= 992px) {
+                    width: calc(100% - 8rem);
+                    max-width: 32rem;
+                }
+            }
+
+            &-close {
+                position: absolute;
+                top: -1rem;
+                right: -1rem;
+                z-index: 10;
+                display: block;
+                background: $cream;
+                border-radius: 50%;
+                width: 2rem;
+                height: 2rem;
+            }
+
+            &-copy {
+                font-family: $ideal-sans;
+                max-height: 12rem;
+                overflow-y: auto;
+            }
+        }
+    }
+}
+
+#note__feature-1 {
+    top: 22%;
+    left: 12%;
+
+    .note__feature-ring {
+        animation-delay: 0s;
+    }
+}
+
+#note__feature-2 {
+    top: 52%;
+    left: 15%;
+
+    .note__feature-ring {
+        animation-delay: 0.596s;
+    }
+}
+
+#note__feature-3 {
+    top: 94%;
+    left: 22%;
+
+    .note__feature-ring {
+        animation-delay: 0.981s;
+    }
+}
+
+#note__feature-4 {
+    top: 18%;
+    left: 46%;
+
+    .note__feature-ring {
+        animation-delay: 1.311s;
+    }
+}
+
+#note__feature-5 {
+    top: 70%;
+    left: 70%;
+
+    .note__feature-modal {
+        @include mq(tablet) {
+            left: -2rem;
+            bottom: 3rem;
+        }
+
+        @include mq(desktop-medium) {
+            left: 3.5rem;
+            bottom: 1.5rem;
+        }
+
+        &-line {
+            @include mq(tablet) {
+                bottom: 16px;
+                left: 15px;
+            }
+
+            @include mq(desktop-medium) {
+                bottom: 39px;
+                left: -73px;
+            }
+        }
+    }
+
+    .note__feature-ring {
+        animation-delay: 0.315s;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    45% {
+        transform: scale(1.75);
+        opacity: 0;
+    }
+}
+@keyframes stop-pulsate {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+body.modal-open {
+    @media (width <= 992px) {
+        overflow: hidden;
+
+        &::before {
+            background: rgba($navy, 0.85);
+            display: block;
+            content: "";
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+        }
+    }
+}
+
+.fancy-header {
+    position: relative;
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: $gray-1000;
+        position: absolute;
+        left: 0;
+        z-index: 1;
+    }
+
+    &::before {
+        top: calc(50% - 4px);
+    }
+
+    &::after {
+        top: calc(50% + 4px);
+    }
+
+    &__title {
+        display: inline-block;
+        border: 1px solid $gray-1000;
+        padding: $spacing-400 $spacing-800 $spacing-300;
+        line-height: 1.15;
+        background: $cream;
+        position: relative;
+        z-index: 2;
+        max-width: 80%;
+        margin: 0 auto;
+        text-wrap: balance;
+        font-size: $type-size-400;
+    }
 }

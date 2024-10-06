@@ -20,11 +20,6 @@
     &__photo {
         aspect-ratio: 640 / 341;
         height: auto;
-
-        img {
-            width: 100%;
-            height: auto;
-        }
     }
 
     &__original {
@@ -101,7 +96,8 @@
             font-family: $sometype-mono;
             border: 2px solid $blue;
             padding: $spacing-300 $spacing-400;
-            width: 20rem;
+            max-width: 20rem;
+            flex: 1;
             font-size: $type-size-200;
 
             @include placeholder {

@@ -83,44 +83,8 @@
     }
 
     &__form {
-        display: flex;
-        align-items: stretch;
-        justify-content: center;
-
         &-wrapper {
-            padding: $spacing-600 0;
-        }
-
-        &-input {
-            color: $gray-950;
-            font-family: $sometype-mono;
-            border: 2px solid $blue;
-            padding: $spacing-300 $spacing-400;
-            max-width: 20rem;
-            flex: 1;
-            font-size: $type-size-200;
-
-            @include placeholder {
-                font-style: italic;
-                color: $gray-500;
-            }
-        }
-
-        &-btn {
-            appearance: none;
-            border: none;
-            display: inline-block;
-            font-family: $golden-wf;
-            text-transform: uppercase;
-            background: $blue;
-            color: $navy;
-            line-height: 0.875em;
-            font-size: 0.875rem;
-            padding: $spacing-200 $spacing-600;
-
-            &:hover {
-                cursor: pointer;
-            }
+            padding-top: $spacing-600;
         }
     }
 

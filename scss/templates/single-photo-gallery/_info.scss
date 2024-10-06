@@ -1,0 +1,48 @@
+@use "./abstracts" as *;
+
+.photo {
+    &__info {
+        a {
+            color: $blue;
+        }
+
+        &-copy-original,
+        &-copy-enhanced {
+            --flow-spacer: 2rem;
+        }
+
+        &-copy-original {
+            display: none;
+        }
+
+        &-utilities {
+            display: inline-grid;
+            gap: $spacing-500;
+            padding-top: $spacing-800;
+
+            &-link {
+                display: inline-grid;
+                grid-template-columns: $spacing-400 1fr;
+                gap: $spacing-300;
+                align-items: center;
+                font-family: $ideal-sans;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                font-size: $type-size-300;
+                padding-bottom: $spacing-050;
+                border-bottom: 1px solid transparent;
+                transition: all 150ms ease;
+
+                &:hover {
+                    border-color: $blue;
+                }
+
+                &.back {
+                    svg {
+                        transform: translateY(2px);
+                    }
+                }
+            }
+        }
+    }
+}

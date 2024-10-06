@@ -1,0 +1,99 @@
+@use "./abstracts" as *;
+
+.photo {
+    &__preview {
+        display: grid;
+        gap: $spacing-600;
+        align-items: center;
+        grid-template-areas:
+            "prev next"
+            "pane pane";
+
+        @include mq(desktop-medium) {
+            grid-template-areas: "prev pane next";
+            grid-template-columns: 8rem 1fr 8rem;
+        }
+
+        &-pane {
+            grid-area: pane;
+        }
+
+        &-original {
+            display: none;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-tabs {
+            padding-top: $spacing-500;
+            display: flex;
+            gap: $spacing-500;
+        }
+
+        &-tab {
+            display: grid;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            font-family: $golden-wf;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: 1px solid $blue;
+            padding: $spacing-200 $spacing-200;
+            color: $blue;
+            transition: all 300ms ease;
+            font-size: $type-size-100;
+
+            @include mq(desktop-small) {
+                font-size: $type-size-200;
+            }
+
+            &:hover,
+            &.active {
+                background: $blue;
+                color: $navy;
+            }
+        }
+
+        &-view-label,
+        &-type-label {
+            display: block;
+        }
+
+        &-year-label {
+            font-size: $type-size-200;
+
+            @include mq(desktop-medium) {
+                font-size: $type-size-300;
+            }
+        }
+    }
+
+    &__pagination {
+        text-align: center;
+
+        &-link {
+            display: block;
+        }
+
+        svg {
+            height: 2rem;
+
+            @include mq(desktop-medium) {
+                height: 3rem;
+            }
+        }
+    }
+
+    &-prev {
+        grid-area: prev;
+    }
+
+    &-next {
+        grid-area: next;
+    }
+}

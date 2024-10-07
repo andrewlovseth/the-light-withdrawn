@@ -83,7 +83,7 @@
             bottom: 1.5rem;
             left: 3.5rem;
             width: 24rem;
-            z-index: 10;
+            z-index: 1000;
 
             &.active {
                 display: block;
@@ -141,8 +141,12 @@
 
             &-copy {
                 font-family: $ideal-sans;
-                max-height: 12rem;
                 overflow-y: auto;
+                max-height: 50vh;
+
+                @include mq(desktop-small) {
+                    max-height: 12rem;
+                }
             }
         }
     }
@@ -256,6 +260,7 @@ body.modal-open {
 
 .fancy-header {
     position: relative;
+    z-index: -1;
     &::before,
     &::after {
         content: "";
@@ -279,14 +284,19 @@ body.modal-open {
     &__title {
         display: inline-block;
         border: 1px solid $gray-1000;
-        padding: $spacing-400 $spacing-800 $spacing-300;
+        padding: $spacing-400 $spacing-400 $spacing-300;
         line-height: 1.15;
         background: $cream;
         position: relative;
         z-index: 2;
         max-width: 80%;
         margin: 0 auto;
-        text-wrap: balance;
-        font-size: $type-size-400;
+        font-size: $type-size-300;
+
+        @include mq(tablet) {
+            font-size: $type-size-400;
+            text-wrap: balance;
+            padding: $spacing-400 $spacing-800 $spacing-300;
+        }
     }
 }

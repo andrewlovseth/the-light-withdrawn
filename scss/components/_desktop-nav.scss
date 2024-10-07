@@ -1,39 +1,45 @@
 @use "./abstracts" as *;
 
 .site-header__desktop {
-    padding: $spacing-600 0;
+    padding: $spacing-600;
     align-items: center;
     font-family: $golden-wf;
+    display: none;
 
-    .site-nav__left {
-        grid-column: 2 / span 4;
+    @include mq(tablet) {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @include mq(desktop-small) {
+        grid-template-columns: minmax(0, 1fr) 24rem minmax(0, 1fr);
     }
 
     .site-logo {
-        grid-column: 6 / span 4;
         text-align: center;
         align-self: center;
     }
 
     .site-nav__right {
-        grid-column: 10 / span 4;
         text-align: right;
     }
 
-    li {
-        padding: $spacing-100 0;
-    }
+    .site-nav {
+        li {
+            padding: $spacing-100 0;
+        }
 
-    a {
-        display: inline-block;
-        text-transform: uppercase;
-        font-size: 0.75rem;
-        border-bottom: 1px solid transparent;
-        transition: all 300ms ease;
+        a {
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            border-bottom: 1px solid transparent;
+            transition: all 300ms ease;
 
-        &:hover,
-        &.active {
-            border-color: $blue;
+            &:hover,
+            &.active {
+                border-color: $blue;
+            }
         }
     }
 }

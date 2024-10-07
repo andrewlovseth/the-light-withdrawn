@@ -1,4 +1,4 @@
-<div class="site-header__desktop | content-grid">
+<div class="site-header__desktop">
 
     <?php if(have_rows('header_nav_left', 'options')): ?>
 
@@ -29,10 +29,9 @@
     <?php endif; ?>
 
     <div class="site-logo site-logo__desktop">
-        <?php
-            $logo = get_field('header_logo', 'options');
-            echo wp_get_attachment_image($logo['ID'], 'full');
-        ?>
+        <a href="<?php echo site_url('/'); ?>">
+            <?php $logo = get_field('header_logo', 'options'); echo wp_get_attachment_image($logo['ID'], 'full'); ?>
+        </a>
     </div>
 
 

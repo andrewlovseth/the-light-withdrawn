@@ -3,6 +3,7 @@ import { setupPhotoGalleryHeroReveal, adjustGalleryPadding } from "./gallery.js"
 import { setupModals } from "./modals.js";
 import { setupPhotoTabs } from "./tabs.js";
 import { setupPasswordModal } from "./passwordModal.js";
+import { setupMobileNav } from "./mobileNav.js"; // Import the mobile nav module
 
 // Initialize navigation logic
 setActiveNavLinks();
@@ -20,3 +21,6 @@ setupPhotoTabs();
 
 // Initialize password modal logic
 setupPasswordModal();
+
+// Initialize mobile navigation logic
+setupMobileNav();

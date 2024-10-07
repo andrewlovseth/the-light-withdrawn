@@ -1,0 +1,66 @@
+@use "./abstracts" as *;
+
+.password-protected-modal {
+    border: none;
+    padding: 0;
+    width: calc(100% - 4rem);
+    max-width: 50rem;
+
+    &__content {
+        padding: $spacing-700 $spacing-600;
+        background-color: #c5e4eb;
+        position: relative;
+        box-shadow: -19px 164px 46px 0px rgba(0, 0, 0, 0), -12px 105px 42px 0px rgba(0, 0, 0, 0.01),
+            -7px 59px 36px 0px rgba(0, 0, 0, 0.05), -3px 26px 26px 0px rgba(0, 0, 0, 0.09),
+            -1px 7px 15px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    &__copy {
+        text-align: center;
+        text-wrap: balance;
+        padding-bottom: $spacing-600;
+    }
+
+    &__close {
+        position: absolute;
+        top: 0.25rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+
+        &:focus,
+        &:active {
+            outline: none;
+        }
+    }
+
+    &__dismiss {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: $spacing-400 auto;
+        gap: $spacing-400;
+        cursor: pointer;
+
+        .faux-checkbox {
+            width: 1rem;
+            height: 1rem;
+            border: 2px solid $navy;
+        }
+    }
+
+    .password-form {
+        text-align: center;
+
+        &__input {
+            border-color: $navy;
+        }
+
+        &__btn {
+            background: $navy;
+            color: $gray-0;
+        }
+    }
+}

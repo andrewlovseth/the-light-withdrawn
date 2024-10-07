@@ -2,6 +2,7 @@ import { setActiveNavLinks, setActivePaginationLinks } from "./nav.js";
 import { setupPhotoGalleryHeroReveal, adjustGalleryPadding } from "./gallery.js";
 import { setupModals } from "./modals.js";
 import { setupPhotoTabs } from "./tabs.js";
+import { setupPasswordModal } from "./passwordModal.js";
 
 // Initialize navigation logic
 setActiveNavLinks();
@@ -16,3 +17,6 @@ setupModals();
 
 // Initialize photo tab switching
 setupPhotoTabs();
+
+// Initialize password modal logic
+setupPasswordModal();

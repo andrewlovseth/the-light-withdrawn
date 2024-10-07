@@ -6,6 +6,8 @@
 
         <?php get_template_part('templates/single-photo-gallery/info'); ?>
 
+        <?php get_template_part('templates/single-photo-gallery/protected-content-modal'); ?>
+
     </section>
 
 <?php get_footer(); ?>

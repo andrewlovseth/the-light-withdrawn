@@ -61,6 +61,7 @@ document.getElementById('password-form').addEventListener('submit', function(e) 
     .then(data => {
         const messageDiv = document.getElementById('message');
         const formDiv = document.querySelector('.password-form__wrapper');
+        const modalDIV = document.querySelector('.password-protected-modal');
         
         if (messageDiv) {
             messageDiv.innerHTML = data.data ? data.data.message : 'Unexpected error';  // Safely handle if the message is undefined
@@ -70,12 +71,12 @@ document.getElementById('password-form').addEventListener('submit', function(e) 
                 messageDiv.classList.add('success');  // Add success class
                 console.log('Password validation success.');
 
-                // Remove the form
+                // Remove the modal and form
                 formDiv.remove();
+                modalDIV.remove();
 
-                // Dynamically update content here instead of reloading the page
-                document.getElementById('enhanced-photo').innerHTML = '<img src="path_to_enhanced_image" alt="Enhanced Image" />';
-
+                // Reload the page to show protected content
+                location.reload();  // Reload the page to update content from server-side session
             } else {
                 messageDiv.classList.add('error');  // Add error class
             }

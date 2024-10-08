@@ -1,11 +1,12 @@
 // toggleExtraCopy.js
 
 export function setupToggleExtraCopy() {
-    if (document.body.classList.contains("page-template-home")) {
-        document.addEventListener("DOMContentLoaded", function () {
-            const moreLink = document.querySelector(".home-about__more-link");
-            const moreContent = document.getElementById("more");
+    document.addEventListener("DOMContentLoaded", function () {
+        const moreLink = document.querySelector(".home-about__more-link");
+        const moreContent = document.getElementById("more");
 
+        // Check if the elements exist before applying logic
+        if (moreLink && moreContent) {
             // Initially hide the "more" content
             moreContent.style.display = "none";
 
@@ -22,6 +23,6 @@ export function setupToggleExtraCopy() {
                     moreLink.textContent = "Keep Reading >>"; // Reset link text
                 }
             });
-        });
-    }
+        }
+    });
 }

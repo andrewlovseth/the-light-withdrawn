@@ -1,9 +1,10 @@
 export function setupModals() {
-    if (document.body.classList.contains("page-template-photo-gallery-main")) {
-        document.addEventListener("DOMContentLoaded", function () {
-            const anchors = document.querySelectorAll(".note__feature-anchor");
-            const closeButtons = document.querySelectorAll(".note__feature-modal-close");
+    document.addEventListener("DOMContentLoaded", function () {
+        const anchors = document.querySelectorAll(".note__feature-anchor");
+        const closeButtons = document.querySelectorAll(".note__feature-modal-close");
 
+        // Proceed only if there are anchors or close buttons on the page
+        if (anchors.length > 0 && closeButtons.length > 0) {
             function openModal(modal) {
                 closeAllModals();
                 modal.classList.add("active");
@@ -27,7 +28,9 @@ export function setupModals() {
                     event.preventDefault();
                     const feature = anchor.closest(".note__feature");
                     const modal = feature.querySelector(".note__feature-modal");
-                    openModal(modal);
+                    if (modal) {
+                        openModal(modal);
+                    }
                 });
             });
 
@@ -35,7 +38,9 @@ export function setupModals() {
                 button.addEventListener("click", function (event) {
                     event.preventDefault();
                     const modal = button.closest(".note__feature-modal");
-                    closeModal(modal);
+                    if (modal) {
+                        closeModal(modal);
+                    }
                 });
             });
 
@@ -54,6 +59,6 @@ export function setupModals() {
                     closeAllModals();
                 }
             });
-        });
-    }
+        }
+    });
 }

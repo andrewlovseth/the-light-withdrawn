@@ -1,13 +1,15 @@
 export function setupPhotoTabs() {
     document.addEventListener("DOMContentLoaded", function () {
-        if (document.body.classList.contains("single-photo-gallery")) {
-            const enhancedTab = document.querySelector(".photo__preview-enhanced-tab");
-            const originalTab = document.querySelector(".photo__preview-original-tab");
-            const enhancedPhoto = document.getElementById("enhanced-photo");
-            const originalPhoto = document.getElementById("original-photo");
-            const enhancedCopy = document.getElementById("enhanced-copy");
-            const originalCopy = document.getElementById("original-copy");
+        // Select the elements
+        const enhancedTab = document.querySelector(".photo__preview-enhanced-tab");
+        const originalTab = document.querySelector(".photo__preview-original-tab");
+        const enhancedPhoto = document.getElementById("enhanced-photo");
+        const originalPhoto = document.getElementById("original-photo");
+        const enhancedCopy = document.getElementById("enhanced-copy");
+        const originalCopy = document.getElementById("original-copy");
 
+        // Check if all necessary elements exist
+        if (enhancedTab && originalTab && enhancedPhoto && originalPhoto && enhancedCopy && originalCopy) {
             // Initially show the original photo and copy, hide the enhanced
             enhancedPhoto.style.display = "none";
             enhancedCopy.style.display = "none";

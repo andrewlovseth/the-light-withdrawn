@@ -1,5 +1,3 @@
-// toggleExtraCopy.js
-
 export function setupToggleExtraCopy() {
     document.addEventListener("DOMContentLoaded", function () {
         const moreLink = document.querySelector(".home-about__more-link");

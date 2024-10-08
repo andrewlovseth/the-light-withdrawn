@@ -1,32 +1,14 @@
 <?php
 
-// Start the session early in the lifecycle using the 'init' hook
-function start_session() {
-    if (session_status() === PHP_SESSION_NONE) {
-        // Force a persistent cookie by setting the cookie parameters
-        session_set_cookie_params([
-            'lifetime' => 0,  // Session cookie will expire when the browser is closed
-            'path' => '/',
-            'domain' => '',   // Defaults to the current domain
-            'secure' => isset($_SERVER['HTTPS']),  // Use secure cookies over HTTPS
-            'httponly' => true,  // Prevent access to the cookie via JavaScript
-            'samesite' => 'Lax',  // Control cross-site request behavior
-        ]);
-        session_start();  // Start the session
-    }
-}
-add_action('init', 'start_session', 1);
-
 // Handle the password form via AJAX and validate the password
 function wp_validate_password_ajax() {
     if (isset($_POST['password'])) {
-        // Sanitize input: remove special characters such as '&'
-        $entered_password = str_replace('&', '', sanitize_text_field($_POST['password']));
+        $entered_password = str_replace('&', '', sanitize_text_field($_POST['password']));  // Remove '&' for validation
         $correct_password = get_field('protected_content_password', 'options');
 
         if ($entered_password === $correct_password) {
-            // Set a session flag to indicate the correct password was entered
-            $_SESSION['site_password'] = 'entered';
+            // Set a cookie to indicate the correct password was entered
+            setcookie('site_password', 'entered', time() + (86400 * 30), "/");  // 30-day expiration
             wp_send_json_success(['message' => 'Success! You can now view the content.']);
         } else {
             wp_send_json_error(['message' => 'Incorrect password. Please try again.']);
@@ -35,18 +17,20 @@ function wp_validate_password_ajax() {
         wp_send_json_error(['message' => 'Password field is empty.']);
     }
 }
+
 add_action('wp_ajax_nopriv_validate_password', 'wp_validate_password_ajax');
 add_action('wp_ajax_validate_password', 'wp_validate_password_ajax');
 
 // Template tag for checking if content is protected
 function is_protected_content() {
-    return !(isset($_SESSION['site_password']) && $_SESSION['site_password'] === 'entered');
+    // Check if the 'site_password' cookie is set
+    return !(isset($_COOKIE['site_password']) && $_COOKIE['site_password'] === 'entered');
 }
 
 // Shortcode to display the password form
 function wp_custom_password_form() {
-    // Check if the session is already set (password has been entered)
-    if (isset($_SESSION['site_password']) && $_SESSION['site_password'] === 'entered') {
+    // Check if the 'site_password' cookie is already set
+    if (isset($_COOKIE['site_password']) && $_COOKIE['site_password'] === 'entered') {
         return '<div class="password-form__message success">You have already entered the correct password.</div>';  // Don't show the form
     }
 
@@ -73,7 +57,7 @@ document.getElementById('password-form').addEventListener('submit', function(e) 
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: `action=validate_password&password=${password}`
+        body: `action=validate_password&password=${encodeURIComponent(password)}`
     })
     .then(response => response.json())
     .then(data => {
@@ -91,10 +75,12 @@ document.getElementById('password-form').addEventListener('submit', function(e) 
 
                 // Remove the modal and form
                 formDiv.remove();
-                modalDIV.remove();
+                if (modalDIV) {
+                    modalDIV.remove();
+                }
 
                 // Reload the page to show protected content
-                location.reload();  // Reload the page to update content from server-side session
+                location.reload();  // Reload the page to update content from server-side cookies
             } else {
                 messageDiv.classList.add('error');  // Add error class
             }
@@ -112,10 +98,9 @@ document.getElementById('password-form').addEventListener('submit', function(e) 
 }
 add_shortcode('bearsmith_password_form', 'wp_custom_password_form');
 
-
-
+// Disable caching for protected pages
 function no_cache_for_protected_pages() {
-    if (is_page_template(array( 'single-photo-gallery.php', 'templates/photo-gallery-main.php' )) && isset($_SESSION['site_password'])) {
+    if (is_page_template(array('single-photo-gallery.php', 'templates/photo-gallery-main.php')) && isset($_COOKIE['site_password'])) {
         // Disable caching
         header('Cache-Control: no-cache, must-revalidate, max-age=0');
         header('Pragma: no-cache');

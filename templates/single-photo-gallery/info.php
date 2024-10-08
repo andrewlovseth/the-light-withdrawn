@@ -24,11 +24,11 @@
             </div>
         <?php endif; ?>
         
-        <?php if($original_copy): ?>
             <div id="original-copy" class="photo__info-copy-original | copy copy-2 flow">
-                <?php echo $original_copy; ?>
+                <?php if($original_copy): ?>
+                    <?php echo $original_copy; ?>
+                <?php endif; ?>
             </div>
-        <?php endif; ?>
     </div>
 
     <div class="photo__info-utilities">

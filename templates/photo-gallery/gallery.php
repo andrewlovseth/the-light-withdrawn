@@ -1,54 +1,51 @@
 <section class="gallery | content-grid">
 
     <?php $items = get_field('list'); if( $items ): ?>
-        <div class="gallery__items">
+        <div id="page-1">
+            <div class="gallery__items">
 
-            <?php foreach( $items as $i ): ?>
+                <?php foreach( $items as $i ): ?>
+
                 <?php
-                    $thumbnail = get_field('photos_thumbnail', $i->ID);
+                    $args = ['item' => $i];
+                    get_template_part('templates/photo-gallery/gallery-item', null, $args);
                 ?>
 
-                <div class="gallery__item">
-                    <a class="gallery__link" href="<?php echo get_permalink( $i->ID ); ?>">
-                        <div class="gallery__photo">
-                            <?php echo wp_get_attachment_image($thumbnail['ID'], 'full'); ?>
-                        </div>
+                <?php endforeach; ?>
 
-                        <div class="gallery__name">
-                            <?php echo get_the_title( $i->ID ); ?>
-                        </div>                        
-                    </a>
-                </div>
-
-            <?php endforeach; ?>
-
+            </div>
         </div>
     <?php endif; ?>
 
-    <?php if(have_rows('pagination')): ?>
-        <nav class="gallery__pagination">
-            <ul class="gallery__pagination-items" role="nav">
+    <?php $page_2_items = get_field('page_2'); if( $page_2_items ): ?>
+        <div id="page-2">
+            <div class="gallery__items">
 
-                <?php while(have_rows('pagination')): the_row(); ?>
-                
-                    <?php 
-                        $link = get_sub_field('link');
-                        if( $link ): 
-                        $link_url = $link['url'];
-                        $link_title = $link['title'];
-                        $link_target = $link['target'] ? $link['target'] : '_self';
-                    ?>
+                <?php foreach( $page_2_items as $i ): ?>
 
-                        <li class="gallery__pagination-item">
-                            <a class="gallery__pagination-link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-                        </li>
+                <?php
+                    $args = ['item' => $i];
+                    get_template_part('templates/photo-gallery/gallery-item', null, $args);
+                ?>
 
-                    <?php endif; ?>
+                <?php endforeach; ?>
 
-                <?php endwhile; ?>
-
-            </ul>
-        </nav>
+            </div>
+        </div>
     <?php endif; ?>
+
+    <nav class="gallery__pagination">
+        <ul class="gallery__pagination-items" role="nav">
+
+            <li class="gallery__pagination-item">
+                <a class="gallery__pagination-link" href="#page-1">1</a>
+            </li>
+
+            <li class="gallery__pagination-item">
+                <a class="gallery__pagination-link" href="#page-2">2</a>
+            </li>
+
+        </ul>
+    </nav>
     
 </section>

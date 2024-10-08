@@ -1,9 +1,12 @@
+// main.js
+
 import { setActiveNavLinks, setActivePaginationLinks } from "./nav.js";
 import { setupPhotoGalleryHeroReveal, adjustGalleryPadding } from "./gallery.js";
 import { setupModals } from "./modals.js";
 import { setupPhotoTabs } from "./tabs.js";
 import { setupPasswordModal } from "./passwordModal.js";
-import { setupMobileNav } from "./mobileNav.js"; // Import the mobile nav module
+import { setupMobileNav } from "./mobileNav.js";
+import { setupPaginationTabs } from "./paginationTabs.js";
 
 // Initialize navigation logic
 setActiveNavLinks();
@@ -24,3 +27,6 @@ setupPasswordModal();
 
 // Initialize mobile navigation logic
 setupMobileNav();
+
+// Initialize pagination tabs logic
+setupPaginationTabs();

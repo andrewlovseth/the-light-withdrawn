@@ -1,6 +1,6 @@
 {
     "key": "group_67007511b835e",
-    "title": "Template: Photo Gallery (Main)",
+    "title": "Template: Photo Gallery",
     "fields": [
         {
             "key": "field_6700751177479",
@@ -173,8 +173,38 @@
         },
         {
             "key": "field_6700828394c34",
-            "label": "List",
+            "label": "Page 1",
             "name": "list",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "photo-gallery"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "object",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_6704afa1b7dba",
+            "label": "Page 2",
+            "name": "page_2",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -469,5 +499,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728175688
+    "modified": 1728360364
 }

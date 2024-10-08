@@ -32,7 +32,7 @@
 
     <div class="photo__preview-pane">
         <div class="photo__preview-viewer">
-            <div id="enhanced-photo" class="photo__preview-enchanced">
+            <div id="enhanced-photo" class="photo__preview-enchanced"  style="aspect-ratio: <?php echo $width; ?> / <?php echo $height; ?>;">
                 <?php if(is_protected_content()): ?>
                     <?php echo wp_get_attachment_image($watermark['ID'], 'full'); ?>
                 <?php else: ?>
@@ -40,14 +40,16 @@
                 <?php endif; ?>
             </div>
 
-            <?php if($original): ?>
                 <div id="original-photo" class="photo__preview-original" style="aspect-ratio: <?php echo $width; ?> / <?php echo $height; ?>;">
-                    <?php echo wp_get_attachment_image($original['ID'], 'full'); ?>                
+
+                    <?php if($original): ?>
+                        <?php echo wp_get_attachment_image($original['ID'], 'full'); ?>        
+                    <?php endif; ?>
+        
                 </div>
-            <?php endif; ?>
         </div>
 
-        <div class="photo__preview-tabs">
+        <div class="photo__preview-tabs<?php if($original == ''): ?> hide<?php endif; ?>">
             <a href="#original" class="photo__preview-tab photo__preview-original-tab">
                 <span class="photo__preview-view-label">View the</span>
                 <span class="photo__preview-type-label">

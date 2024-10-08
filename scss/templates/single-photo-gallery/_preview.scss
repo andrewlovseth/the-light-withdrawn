@@ -11,11 +11,18 @@
 
         @include mq(desktop-medium) {
             grid-template-areas: "prev pane next";
-            grid-template-columns: 8rem 1fr 8rem;
+            grid-template-columns: 2rem 1fr 2rem;
         }
 
         &-pane {
             grid-area: pane;
+        }
+
+        &-viewer {
+            & > div {
+                max-height: 80vh;
+                margin: 0 auto;
+            }
         }
 
         &-original {
@@ -32,6 +39,10 @@
             padding-top: $spacing-500;
             display: flex;
             gap: $spacing-500;
+
+            &.hide {
+                display: none;
+            }
         }
 
         &-tab {
@@ -46,10 +57,10 @@
             padding: $spacing-200 $spacing-200;
             color: $blue;
             transition: all 300ms ease;
-            font-size: $type-size-100;
+            font-size: $type-size-050;
 
             @include mq(desktop-small) {
-                font-size: $type-size-200;
+                font-size: $type-size-100;
             }
 
             &:hover,

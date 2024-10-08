@@ -24,7 +24,7 @@ body.single-photo-gallery {
         margin: 0 auto;
 
         @include mq(desktop-small) {
-            padding: $spacing-900 $spacing-600;
+            padding: $spacing-700 $spacing-700;
 
             grid-template-columns: 2fr 1fr;
         }

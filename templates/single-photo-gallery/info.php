@@ -18,17 +18,17 @@
 
 <div class="photo__info">
     <div class="photo__info-copy">
+        <div id="original-copy" class="photo__info-copy-original | copy copy-2 flow">
+            <?php if($original_copy): ?>
+                <?php echo $original_copy; ?>
+            <?php endif; ?>
+        </div>
+
         <?php if($enhanced_copy): ?>
             <div id="enhanced-copy" class="photo__info-copy-enhanced | copy copy-2 flow">
                 <?php echo $enhanced_copy; ?>
             </div>
         <?php endif; ?>
-        
-            <div id="original-copy" class="photo__info-copy-original | copy copy-2 flow">
-                <?php if($original_copy): ?>
-                    <?php echo $original_copy; ?>
-                <?php endif; ?>
-            </div>
     </div>
 
     <div class="photo__info-utilities">

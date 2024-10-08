@@ -32,6 +32,12 @@
 
     <div class="photo__preview-pane">
         <div class="photo__preview-viewer">
+            <div id="original-photo" class="photo__preview-original" style="aspect-ratio: <?php echo $width; ?> / <?php echo $height; ?>;">
+                <?php if($original): ?>
+                    <?php echo wp_get_attachment_image($original['ID'], 'full'); ?>        
+                <?php endif; ?>
+            </div>
+
             <div id="enhanced-photo" class="photo__preview-enchanced"  style="aspect-ratio: <?php echo $width; ?> / <?php echo $height; ?>;">
                 <?php if(is_protected_content()): ?>
                     <?php echo wp_get_attachment_image($watermark['ID'], 'full'); ?>
@@ -39,18 +45,10 @@
                     <?php echo wp_get_attachment_image($enhanced['ID'], 'full'); ?>
                 <?php endif; ?>
             </div>
-
-                <div id="original-photo" class="photo__preview-original" style="aspect-ratio: <?php echo $width; ?> / <?php echo $height; ?>;">
-
-                    <?php if($original): ?>
-                        <?php echo wp_get_attachment_image($original['ID'], 'full'); ?>        
-                    <?php endif; ?>
-        
-                </div>
         </div>
 
         <div class="photo__preview-tabs<?php if($original == ''): ?> hide<?php endif; ?>">
-            <a href="#original" class="photo__preview-tab photo__preview-original-tab">
+            <a href="#original" class="photo__preview-tab photo__preview-original-tab active">
                 <span class="photo__preview-view-label">View the</span>
                 <span class="photo__preview-type-label">
                     <?php if($original_year): ?><span class="photo__preview-year-label"><?php echo $original_year; ?></span><?php endif; ?>
@@ -58,7 +56,7 @@
                 </span>
             </a>
 
-            <a href="#enhanced" class="photo__preview-tab photo__preview-enhanced-tab active">
+            <a href="#enhanced" class="photo__preview-tab photo__preview-enhanced-tab ">
                 <span class="photo__preview-view-label">View the</span>
                 <span class="photo__preview-type-label">Enhanced Image</span>
             </a>

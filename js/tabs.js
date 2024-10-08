@@ -8,9 +8,9 @@ export function setupPhotoTabs() {
             const enhancedCopy = document.getElementById("enhanced-copy");
             const originalCopy = document.getElementById("original-copy");
 
-            // Initially show the enhanced photo and copy, hide the original
-            originalPhoto.style.display = "none";
-            originalCopy.style.display = "none";
+            // Initially show the original photo and copy, hide the enhanced
+            enhancedPhoto.style.display = "none";
+            enhancedCopy.style.display = "none";
 
             // Function to toggle between tabs
             function showPhotoAndCopy(selectedPhoto, selectedCopy, otherPhoto, otherCopy) {

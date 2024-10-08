@@ -3,7 +3,16 @@
 // Start the session early in the lifecycle using the 'init' hook
 function start_session() {
     if (session_status() === PHP_SESSION_NONE) {
-        session_start();  // Start the session if it hasn't been started
+        // Force a persistent cookie by setting the cookie parameters
+        session_set_cookie_params([
+            'lifetime' => 0,  // Session cookie will expire when the browser is closed
+            'path' => '/',
+            'domain' => '',   // Defaults to the current domain
+            'secure' => isset($_SERVER['HTTPS']),  // Use secure cookies over HTTPS
+            'httponly' => true,  // Prevent access to the cookie via JavaScript
+            'samesite' => 'Lax',  // Control cross-site request behavior
+        ]);
+        session_start();  // Start the session
     }
 }
 add_action('init', 'start_session', 1);
@@ -102,3 +111,14 @@ document.getElementById('password-form').addEventListener('submit', function(e) 
     return ob_get_clean();
 }
 add_shortcode('bearsmith_password_form', 'wp_custom_password_form');
+
+
+
+function no_cache_for_protected_pages() {
+    if (is_page_template(array( 'single-photo-gallery.php', 'templates/photo-gallery-main.php' )) && isset($_SESSION['site_password'])) {
+        // Disable caching
+        header('Cache-Control: no-cache, must-revalidate, max-age=0');
+        header('Pragma: no-cache');
+    }
+}
+add_action('template_redirect', 'no_cache_for_protected_pages');

@@ -1,0 +1,99 @@
+@use "./abstracts" as *;
+
+.notes {
+    &__list {
+        display: grid;
+        gap: 2rem;
+        padding-top: $spacing-600;
+
+        @include mq(desktop-small) {
+            padding-top: $spacing-800;
+        }
+    }
+}
+
+.single-note {
+    display: grid;
+    gap: $spacing-400;
+    grid-template-columns: 1fr 8rem;
+    align-items: center;
+
+    @include mq(desktop-small) {
+        padding-left: $spacing-600;
+    }
+
+    &__title {
+        font-size: 1.25rem;
+
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        em + .small-caps {
+            padding-left: $spacing-050;
+        }
+
+        .small-caps {
+            font-variant: small-caps;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+        }
+    }
+
+    &__pages {
+        text-align: right;
+    }
+}
+
+.header-note {
+    display: grid;
+    gap: $spacing-400;
+    align-items: center;
+
+    @include mq(desktop-small) {
+        padding-left: $spacing-600;
+    }
+
+    &__title {
+        font-size: $type-size-500;
+        padding-bottom: $spacing-300;
+        border-bottom: 1px solid $gray-950;
+        margin-bottom: $spacing-500;
+
+        a {
+            display: block;
+            line-height: 1.4em;
+            &:hover {
+                .part-title {
+                }
+            }
+        }
+
+        em + .small-caps {
+            padding-left: $spacing-050;
+        }
+
+        .small-caps {
+            font-variant: small-caps;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            font-size: $type-size-500;
+        }
+
+        .part-title {
+            display: block;
+            font-variant: small-caps;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            font-size: $type-size-600;
+        }
+    }
+}
+
+.chapters {
+    display: grid;
+    gap: $spacing-400;
+    padding-bottom: $spacing-500;
+}

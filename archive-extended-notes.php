@@ -16,5 +16,6 @@
         get_template_part('components/hero', null, $args);
     ?>
 
+    <?php get_template_part('templates/archive-extended-notes/documents'); ?>
 
 <?php get_footer(); ?>

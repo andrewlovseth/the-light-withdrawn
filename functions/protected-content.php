@@ -11,8 +11,9 @@ add_action('init', 'start_session', 1);
 // Handle the password form via AJAX and validate the password
 function wp_validate_password_ajax() {
     if (isset($_POST['password'])) {
-        $entered_password = sanitize_text_field($_POST['password']);
-        $correct_password = get_field('protected_content_password', 'options');  // Retrieve the correct password from ACF or another method
+        // Sanitize input: remove special characters such as '&'
+        $entered_password = str_replace('&', '', sanitize_text_field($_POST['password']));
+        $correct_password = get_field('protected_content_password', 'options');
 
         if ($entered_password === $correct_password) {
             // Set a session flag to indicate the correct password was entered
@@ -35,6 +36,11 @@ function is_protected_content() {
 
 // Shortcode to display the password form
 function wp_custom_password_form() {
+    // Check if the session is already set (password has been entered)
+    if (isset($_SESSION['site_password']) && $_SESSION['site_password'] === 'entered') {
+        return '<div class="password-form__message success">You have already entered the correct password.</div>';  // Don't show the form
+    }
+
     ob_start(); ?>
     
     <form id="password-form" class="password-form">
@@ -48,7 +54,10 @@ function wp_custom_password_form() {
     <script>
 document.getElementById('password-form').addEventListener('submit', function(e) {
     e.preventDefault();  // Prevent the default form submission behavior
-    const password = document.getElementById('password').value;
+    let password = document.getElementById('password').value;
+
+    // Remove the '&' character before submitting the password
+    password = password.replace(/&/g, '');
 
     fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
         method: 'POST',

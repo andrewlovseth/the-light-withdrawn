@@ -97,6 +97,27 @@
                     "selected": 0
                 },
                 {
+                    "key": "field_6704b9ba782a6",
+                    "label": "Show CTA",
+                    "name": "show_cta",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui_on_text": "Show",
+                    "ui_off_text": "Hide",
+                    "ui": 1
+                },
+                {
                     "key": "field_67006b4e0fc4b",
                     "label": "CTA",
                     "name": "cta",
@@ -130,6 +151,27 @@
                     "placement": "top",
                     "endpoint": 0,
                     "selected": 0
+                },
+                {
+                    "key": "field_6704b9722fd28",
+                    "label": "Show Social Links",
+                    "name": "show_social_links",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui_on_text": "Show",
+                    "ui_off_text": "Hide",
+                    "ui": 1
                 },
                 {
                     "key": "field_67006b600fc4d",
@@ -261,5 +303,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728080808
+    "modified": 1728362952
 }

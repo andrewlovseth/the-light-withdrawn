@@ -10,32 +10,32 @@
 
 ?>
 
-<section class="hero">
-    <div class="hero__photos">
-        <div class="hero__photo hero__original">
+<section class="gallery-hero">
+    <div class="gallery-hero__photos">
+        <div class="gallery-hero__photo gallery-hero__original">
             <?php echo wp_get_attachment_image($original['ID'], 'full'); ?>
         </div>
 
-        <div class="hero__photo hero__enhanced">
-            <div class="hero__enhanced-wrapper">
+        <div class="gallery-hero__photo gallery-hero__enhanced">
+            <div class="gallery-hero__enhanced-wrapper">
                 <?php echo wp_get_attachment_image($enhanced['ID'], 'full'); ?>
             </div>
         </div>
     </div>
 
-    <div class="hero__info">
-        <div class="hero__info-wrapper">
-            <h1 class="hero__headline"><?php echo $headline; ?></h1>
+    <div class="gallery-hero__info">
+        <div class="gallery-hero__info-wrapper">
+            <h1 class="gallery-hero__headline"><?php echo $headline; ?></h1>
             
-            <div class="hero__copy | copy copy-2">
+            <div class="gallery-hero__copy | copy copy-2">
                 <?php echo $copy; ?>
             </div>
 
-            <div class="hero__form-wrapper">
+            <div class="gallery-hero__form-wrapper">
                 <?php echo do_shortcode('[bearsmith_password_form]'); ?>
             </div>
 
-            <div class="hero__credits | copy copy-3">
+            <div class="gallery-hero__credits | copy copy-3">
                 <p><?php echo $credits; ?></p>
             </div>
         </div>

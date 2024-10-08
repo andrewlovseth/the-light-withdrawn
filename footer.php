@@ -1,6 +1,6 @@
 	</main> <?php //.site-content ?>
 
-	<footer class="site-footer content-grid">
+	<footer class="site-footer">
 		<?php get_template_part('components/footer/nav'); ?>
 
 		<?php get_template_part('components/footer/cta'); ?>

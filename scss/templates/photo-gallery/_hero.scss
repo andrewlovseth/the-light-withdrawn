@@ -1,13 +1,13 @@
 @use "./abstracts" as *;
 
-.hero {
+.gallery-hero {
     position: relative;
     &__photos {
         display: grid;
         position: relative;
 
         &.transitioned {
-            .hero__enhanced {
+            .gallery-hero__enhanced {
                 grid-template-rows: 1fr;
 
                 &-wrapper {

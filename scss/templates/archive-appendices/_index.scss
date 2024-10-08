@@ -1,0 +1,36 @@
+@use "./abstracts" as *;
+
+.appendices {
+    &__list {
+        display: grid;
+        gap: 2rem;
+        padding-top: $spacing-600;
+
+        @include mq(desktop-small) {
+            padding-top: $spacing-800;
+        }
+    }
+}
+
+.appendix {
+    @include mq(desktop-small) {
+        padding-left: $spacing-600;
+    }
+
+    &__label {
+        text-transform: uppercase;
+        font-size: $type-size-300;
+        letter-spacing: 0.25em;
+        padding-bottom: $spacing-200;
+        font-weight: 600;
+    }
+
+    &__link {
+        display: inline-block;
+        font-size: $type-size-500;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

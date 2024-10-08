@@ -1,0 +1,70 @@
+@use "./abstracts" as *;
+
+.documents {
+    padding: $spacing-600 0;
+
+    @include mq(desktop-small) {
+        padding: $spacing-800 0;
+    }
+
+    &__sidebar {
+        @include mq(tablet-small) {
+            grid-column: 3 / span 6;
+        }
+        @include mq(desktop-small) {
+            grid-column: 3 / span 3;
+        }
+    }
+
+    .book-cover {
+        max-width: 24rem;
+    }
+    &__download-all {
+        padding-top: $spacing-600;
+    }
+
+    &__list {
+        @include mq(tablet-small) {
+            grid-column: 3 / span 6;
+        }
+
+        @include mq(desktop-small) {
+            grid-column: 6 / span 7;
+        }
+    }
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: $spacing-200;
+        font-family: $ideal-sans;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: $type-size-200;
+        color: $gray-1000;
+        border: 1px solid $blue;
+        padding: 6px 8px;
+        transition: all 150ms ease;
+
+        svg path {
+            fill: $navy;
+            transition: fill 150ms ease;
+        }
+
+        &:hover {
+            background: $blue;
+            color: $navy;
+
+            svg path {
+                fill: $navy;
+            }
+        }
+    }
+
+    &__rule {
+        width: 100%;
+        height: $spacing-200;
+        border-top: 1px solid $gray-950;
+        border-bottom: 1px solid $gray-950;
+    }
+}

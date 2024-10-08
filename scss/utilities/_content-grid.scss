@@ -2,7 +2,7 @@
 
 .content-grid {
     display: grid;
-    gap: 0 $spacing-600;
+    gap: $spacing-600;
     grid-template-columns:
         [full-width-start] minmax(0, auto)
         [content-start]

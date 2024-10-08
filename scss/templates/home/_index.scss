@@ -1,1 +1,13 @@
-//@forward "section";
+@forward "about";
+
+@forward "special-features";
+
+@forward "author";
+
+@use "./abstracts" as *;
+
+.page-template-home {
+    .site-content {
+        padding-bottom: $spacing-600;
+    }
+}

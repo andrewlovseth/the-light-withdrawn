@@ -7,6 +7,8 @@ import { setupPhotoTabs } from "./tabs.js";
 import { setupPasswordModal } from "./passwordModal.js";
 import { setupMobileNav } from "./mobileNav.js";
 import { setupPaginationTabs } from "./paginationTabs.js";
+import { setupToggleExtraCopy } from "./toggleExtraCopy.js";
+import { setupbuyBookModal } from "./buyBookModal.js";
 
 // Initialize navigation logic
 setActiveNavLinks();
@@ -30,3 +32,9 @@ setupMobileNav();
 
 // Initialize pagination tabs logic
 setupPaginationTabs();
+
+// Initialize toggle extra copy logic
+setupToggleExtraCopy();
+
+// Initialize buy book modal logic
+setupbuyBookModal();

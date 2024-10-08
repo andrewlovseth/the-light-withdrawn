@@ -1,0 +1,77 @@
+@use "./abstracts" as *;
+
+.buy-book {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: none;
+    border: none;
+    padding: $spacing-600;
+
+    z-index: 9999;
+
+    &.active {
+        display: block;
+    }
+
+    &__header {
+        text-align: center;
+        padding-bottom: $spacing-600;
+    }
+
+    &__title {
+        font-family: $golden-wf;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: $type-size-300;
+    }
+
+    &__wrapper {
+        background: $blue;
+        padding: $spacing-700;
+        box-shadow: 2px 4px 8px rgba($gray-1000, 0.2);
+        position: relative;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: $spacing-600;
+        max-width: 32rem;
+    }
+
+    &__item {
+        width: 33%;
+
+        @include mq(tablet) {
+            width: 25%;
+        }
+    }
+
+    &__link {
+        display: block;
+
+        img {
+            border-radius: $spacing-200;
+            border: 1px solid $navy;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 10;
+        display: grid;
+        place-items: center;
+        color: $navy;
+        background: transparent;
+        border: none;
+        width: 2rem;
+        height: 2rem;
+        font-size: 2rem;
+        line-height: 1;
+        cursor: pointer;
+    }
+}

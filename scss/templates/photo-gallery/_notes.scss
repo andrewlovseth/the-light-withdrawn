@@ -8,11 +8,6 @@
         text-align: center;
     }
 
-    &__title {
-        text-transform: uppercase;
-        font-family: $golden-wf;
-    }
-
     &__copy {
         text-align: center;
         text-wrap: balance;
@@ -261,6 +256,8 @@ body.modal-open {
 .fancy-header {
     position: relative;
     z-index: -1;
+    text-align: center;
+
     &::before,
     &::after {
         content: "";
@@ -292,6 +289,8 @@ body.modal-open {
         max-width: 80%;
         margin: 0 auto;
         font-size: $type-size-300;
+        text-transform: uppercase;
+        font-family: $golden-wf;
 
         @include mq(tablet) {
             font-size: $type-size-400;

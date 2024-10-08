@@ -1,0 +1,29 @@
+@use "./abstracts" as *;
+
+.home-author {
+    &__grid {
+        display: grid;
+        gap: $spacing-400 $spacing-600;
+        padding-top: $spacing-400;
+
+        @include mq(tablet-small) {
+            grid-column: 3 / span 6;
+        }
+
+        @include mq(tablet) {
+            grid-template-columns: 1fr 3fr;
+        }
+
+        @include mq(desktop-small) {
+            grid-column: 3 / span 10;
+        }
+    }
+
+    &__photo-caption {
+        .small-caps {
+            font-variant: small-caps;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+    }
+}

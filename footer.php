@@ -15,5 +15,7 @@
 
 </div> <?php //.site ?>
 
+<?php get_template_part('components/buy-book-modal'); ?>
+
 </body>
 </html>

@@ -1,0 +1,24 @@
+@use "./abstracts" as *;
+
+.growl-notification {
+    position: fixed;
+    bottom: $spacing-300;
+    right: $spacing-600;
+    color: $gray-0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    background-color: #16a34a;
+    display: inline-block;
+    margin: $spacing-400 auto;
+    transition: opacity 0.5s ease;
+    min-height: 20px;
+    font-family: $sometype-mono;
+    font-size: $type-size-200;
+    padding: $spacing-100 $spacing-400;
+
+    &.fade-out {
+        opacity: 0;
+    }
+}

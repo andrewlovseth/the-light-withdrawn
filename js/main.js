@@ -8,7 +8,7 @@ import { setupPaginationTabs } from "./paginationTabs.js?v=1.1";
 import { setupToggleExtraCopy } from "./toggleExtraCopy.js?v=1.1";
 import { setupbuyBookModal } from "./buyBookModal.js?v=1.1";
 import { setupPhotoVisibilityToggle } from "./photoVisibility.js?v=1.1";
-import { setupPasswordForm } from "./passwordForm.js?v=1.1";
+import { setupPasswordForm, checkPassword } from "./passwordForm.js?v=1.3";
 import { setupPhotoInfoToggle } from "./photoInfoToggle.js?v=1.1";
 
 // Initialize navigation logic
@@ -45,6 +45,9 @@ setupPhotoVisibilityToggle();
 
 // Initialize password form submission
 setupPasswordForm();
+
+// Check if the password has already been entered on page load
+checkPassword();
 
 // Initialize other modules...
 setupPhotoInfoToggle(); // Initialize the photo info toggle logic

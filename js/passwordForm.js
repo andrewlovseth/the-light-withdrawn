@@ -1,59 +1,114 @@
 export function setupPasswordForm() {
-    const passwordForm = document.getElementById("password-form");
+    document.addEventListener("DOMContentLoaded", function () {
+        const passwordForm = document.getElementById("password-form");
+        const correctPassword = "SimonSchuster"; // Hardcoded password
 
-    if (passwordForm) {
-        passwordForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Prevent default form submission
+        if (passwordForm) {
+            passwordForm.addEventListener("submit", function (e) {
+                e.preventDefault(); // Prevent default form submission
 
-            let password = document.getElementById("password").value;
+                const passwordInput = document.getElementById("password");
 
-            // Remove the '&' character before submitting the password
-            password = password.replace(/&/g, "");
+                if (passwordInput) {
+                    let password = passwordInput.value;
 
-            const ajaxUrl = typeof ajaxurl !== "undefined" ? ajaxurl : "/wp-admin/admin-ajax.php";
+                    // Remove the '&' character before checking the password
+                    password = password.replace(/&/g, "");
 
-            fetch(ajaxUrl, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: `action=validate_password&password=${encodeURIComponent(password)}`,
-            })
-                .then((response) => response.json()) // Parse the response as JSON
-                .then((data) => {
                     const messageDiv = document.getElementById("message");
-                    const formDiv = document.querySelector(".password-form__wrapper");
-                    const modalDIV = document.querySelector(".password-protected-modal");
+                    const modalDIV = document.querySelector(".password-protected-modal"); // Select modal
 
-                    if (messageDiv) {
-                        messageDiv.innerHTML = data.data ? data.data.message : "Unexpected error"; // Safely handle if the message is undefined
+                    // Check if the entered password is correct (Client-side validation)
+                    if (password === correctPassword) {
+                        // Set a cookie (expires in 30 days)
+                        document.cookie = "site_password=entered; path=/; max-age=" + 86400 * 30;
 
-                        messageDiv.classList.remove("success", "error"); // Clear previous classes
-                        if (data.success) {
-                            messageDiv.classList.add("success"); // Add success class
+                        // Set localStorage for additional protection
+                        localStorage.setItem("site_password", "entered");
 
-                            if (data.data && data.data.setLocalStorage) {
-                                // Make sure we access 'setLocalStorage' inside 'data.data'
-                                localStorage.setItem("site_password", "entered");
-                            }
+                        // Hide the form and show a success message
+                        const formDiv = document.querySelector(".password-form__wrapper");
+                        formDiv.remove();
 
-                            // Remove the modal and form
-                            formDiv.remove();
-                            if (modalDIV) {
-                                modalDIV.remove();
-                            }
-
-                            // Optionally, reload the page to show protected content
-                            location.reload();
-                        } else {
-                            messageDiv.classList.add("error"); // Add error class
+                        if (messageDiv) {
+                            messageDiv.textContent = "You have successfully entered the password."; // Success message
+                            messageDiv.classList.add("success");
+                            messageDiv.style.opacity = 1;
                         }
 
-                        // Make sure the message is visible
-                        messageDiv.style.opacity = 1;
+                        // Hide the modal if present
+                        if (modalDIV) {
+                            modalDIV.close(); // Close the modal using dialog's close method
+
+                            // Show the growl-style success notification
+                            showGrowlNotification("Success! You have entered the correct password.");
+
+                            // Dynamically toggle the photo visibility (Update watermark/full-res image)
+                            togglePhotoVisibility();
+                        }
+                    } else {
+                        // Use the messageDiv to show a custom error message
+                        if (messageDiv) {
+                            messageDiv.textContent = "Incorrect password. Please try again."; // Custom error message
+                            messageDiv.classList.remove("success"); // Ensure the success class is removed
+                            messageDiv.classList.add("error"); // Add the error class for styling
+                            messageDiv.style.opacity = 1; // Make sure the message is visible
+                        }
                     }
-                })
-                .catch((error) => console.error("Error:", error));
-        });
+                }
+            });
+        }
+    });
+}
+
+// Function to show the growl notification
+function showGrowlNotification(message) {
+    // Create the notification element
+    const growl = document.createElement("div");
+    growl.className = "growl-notification";
+    growl.textContent = message;
+
+    // Append it to the body (or another container)
+    document.body.appendChild(growl);
+
+    // Automatically fade out after 3 seconds
+    setTimeout(() => {
+        growl.style.opacity = "0"; // Start fade out
+        setTimeout(() => {
+            growl.remove(); // Remove from the DOM
+        }, 500); // Wait for the fade-out animation to complete
+    }, 3000); // Show the notification for 3 seconds
+}
+
+// Function to toggle watermark and full-resolution photo visibility
+function togglePhotoVisibility() {
+    const watermarkEl = document.querySelector(".photo__preview-enhanced-watermark");
+    const enhancedEl = document.querySelector(".photo__preview-enhanced-full");
+
+    if (watermarkEl && enhancedEl) {
+        // Remove 'active' class from the watermark and add it to the full-resolution image
+        watermarkEl.classList.remove("active");
+        enhancedEl.classList.add("active");
+    }
+}
+
+export function checkPassword() {
+    const passwordEnteredInCookie = document.cookie.split("; ").find((row) => row.startsWith("site_password="));
+    const passwordEnteredInLocalStorage = localStorage.getItem("site_password") === "entered";
+
+    // Get the form wrapper and message div
+    const formDiv = document.querySelector(".password-form__wrapper");
+    const messageDiv = document.getElementById("message");
+
+    // If the password has been entered, hide the form and show a success message
+    if (passwordEnteredInCookie || passwordEnteredInLocalStorage) {
+        if (formDiv) formDiv.remove(); // Remove the form
+
+        // Show the success message after page reload
+        if (messageDiv) {
+            messageDiv.textContent = "You have successfully entered the password."; // Show success message
+            messageDiv.classList.add("success"); // Add the success class for styling
+            messageDiv.style.opacity = 1; // Make sure the message is visible
+        }
     }
 }

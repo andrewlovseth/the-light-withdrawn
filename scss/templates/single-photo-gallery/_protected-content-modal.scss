@@ -5,6 +5,11 @@
     padding: 0;
     width: calc(100% - 4rem);
     max-width: 50rem;
+    display: none;
+
+    &[open] {
+        display: block;
+    }
 
     &__content {
         padding: $spacing-700 $spacing-600;

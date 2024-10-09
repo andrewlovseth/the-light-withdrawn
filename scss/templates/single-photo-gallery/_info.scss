@@ -9,6 +9,11 @@
         &-copy-original,
         &-copy-enhanced {
             --flow-spacer: 2rem;
+            display: none;
+
+            &.active {
+                display: block;
+            }
         }
 
         &-utilities {

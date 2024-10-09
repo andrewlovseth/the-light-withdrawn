@@ -3,11 +3,20 @@ export function setupPasswordModal() {
         const modal = document.getElementById("password-protected-modal");
         const closeModalBtn = document.getElementById("close-btn");
         const dismissModalBtn = document.getElementById("dismiss-btn");
+        const passwordForm = document.getElementById("password-form");
 
         // Check if the modal exists
         if (modal) {
-            // Check if the modal should be shown
-            if (!sessionStorage.getItem("modalDismissed")) {
+            // Check if the password has already been entered (via cookie or localStorage)
+            const passwordEnteredInCookie = document.cookie.split("; ").find((row) => row.startsWith("site_password="));
+            const passwordEnteredInLocalStorage = localStorage.getItem("site_password") === "entered";
+
+            // If the password is not entered and the modal is not dismissed, show the modal
+            if (
+                !passwordEnteredInCookie &&
+                !passwordEnteredInLocalStorage &&
+                !sessionStorage.getItem("modalDismissed")
+            ) {
                 modal.showModal();
             }
 
@@ -22,9 +31,33 @@ export function setupPasswordModal() {
             if (dismissModalBtn) {
                 dismissModalBtn.addEventListener("click", function (event) {
                     event.preventDefault();
-
                     sessionStorage.setItem("modalDismissed", "true");
                     modal.close();
+                });
+            }
+
+            // Handle password form submission within the modal
+            if (passwordForm) {
+                passwordForm.addEventListener("submit", function (e) {
+                    e.preventDefault(); // Prevent default form submission
+
+                    const passwordInput = document.getElementById("password").value;
+                    const correctPassword = "SimonSchuster"; // Example hardcoded password
+
+                    // Check if the entered password is correct
+                    if (passwordInput === correctPassword) {
+                        // Set cookie (expires in 30 days)
+                        document.cookie = "site_password=entered; path=/; max-age=" + 86400 * 30;
+
+                        // Set localStorage
+                        localStorage.setItem("site_password", "entered");
+
+                        // Close the modal after successful password entry
+                        modal.close();
+
+                        // Refresh the page to reflect the new content visibility (optional)
+                        location.reload();
+                    }
                 });
             }
 

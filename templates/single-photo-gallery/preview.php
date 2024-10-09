@@ -38,12 +38,14 @@
                 <?php endif; ?>
             </div>
 
-            <div id="enhanced-photo" class="photo__preview-enchanced"  style="aspect-ratio: <?php echo $width; ?> / <?php echo $height; ?>;">
-                <?php if(is_protected_content()): ?>
+            <div id="enhanced-photo" class="photo__preview-enhanced"  style="aspect-ratio: <?php echo $width; ?> / <?php echo $height; ?>;">
+                <div class="photo__preview-enhanced-watermark active">
                     <?php echo wp_get_attachment_image($watermark['ID'], 'full'); ?>
-                <?php else: ?>
+                </div>
+
+                <div class="photo__preview-enhanced-full">
                     <?php echo wp_get_attachment_image($enhanced['ID'], 'full'); ?>
-                <?php endif; ?>
+                </div>
             </div>
         </div>
 

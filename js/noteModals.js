@@ -1,4 +1,4 @@
-export function setupModals() {
+export function setupNoteModals() {
     document.addEventListener("DOMContentLoaded", function () {
         const anchors = document.querySelectorAll(".note__feature-anchor");
         const closeButtons = document.querySelectorAll(".note__feature-modal-close");

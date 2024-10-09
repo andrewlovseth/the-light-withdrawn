@@ -1,14 +1,15 @@
-// main.js
-
-import { setActiveNavLinks, setActivePaginationLinks } from "./nav.js";
-import { setupPhotoGalleryHeroReveal, adjustGalleryPadding } from "./gallery.js";
-import { setupModals } from "./modals.js";
-import { setupPhotoTabs } from "./tabs.js";
-import { setupPasswordModal } from "./passwordModal.js";
-import { setupMobileNav } from "./mobileNav.js";
-import { setupPaginationTabs } from "./paginationTabs.js";
-import { setupToggleExtraCopy } from "./toggleExtraCopy.js";
-import { setupbuyBookModal } from "./buyBookModal.js";
+import { setActiveNavLinks, setActivePaginationLinks } from "./nav.js?v=1.1";
+import { setupPhotoGalleryHeroReveal, adjustGalleryPadding } from "./gallery.js?v=1.1";
+import { setupNoteModals } from "./noteModals.js?v=1.1";
+import { setupPhotoTabs } from "./photoTabs.js?v=1.1";
+import { setupPasswordModal } from "./passwordModal.js?v=1.1";
+import { setupMobileNav } from "./mobileNav.js?v=1.1";
+import { setupPaginationTabs } from "./paginationTabs.js?v=1.1";
+import { setupToggleExtraCopy } from "./toggleExtraCopy.js?v=1.1";
+import { setupbuyBookModal } from "./buyBookModal.js?v=1.1";
+import { setupPhotoVisibilityToggle } from "./photoVisibility.js?v=1.1";
+import { setupPasswordForm } from "./passwordForm.js?v=1.1";
+import { setupPhotoInfoToggle } from "./photoInfoToggle.js?v=1.1";
 
 // Initialize navigation logic
 setActiveNavLinks();
@@ -19,7 +20,7 @@ setupPhotoGalleryHeroReveal();
 adjustGalleryPadding();
 
 // Initialize modals
-setupModals();
+setupNoteModals();
 
 // Initialize photo tab switching
 setupPhotoTabs();
@@ -38,3 +39,12 @@ setupToggleExtraCopy();
 
 // Initialize buy book modal logic
 setupbuyBookModal();
+
+// Initialize photo visibility toggle logic for watermark vs enhanced image
+setupPhotoVisibilityToggle();
+
+// Initialize password form submission
+setupPasswordForm();
+
+// Initialize other modules...
+setupPhotoInfoToggle(); // Initialize the photo info toggle logic

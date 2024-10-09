@@ -8,8 +8,9 @@ import { setupPaginationTabs } from "./paginationTabs.js?v=1.1";
 import { setupToggleExtraCopy } from "./toggleExtraCopy.js?v=1.1";
 import { setupbuyBookModal } from "./buyBookModal.js?v=1.1";
 import { setupPhotoVisibilityToggle } from "./photoVisibility.js?v=1.1";
-import { setupPasswordForm, checkPassword } from "./passwordForm.js?v=1.3";
+import { setupPasswordForm, checkPassword } from "./passwordForm.js?v=1.5";
 import { setupPhotoInfoToggle } from "./photoInfoToggle.js?v=1.1";
+import { setupPasswordVisibilityOnLoad } from "./passwordVisibility.js?v=1.0"; // Assuming it's in a separate file
 
 // Initialize navigation logic
 setActiveNavLinks();
@@ -40,6 +41,12 @@ setupToggleExtraCopy();
 // Initialize buy book modal logic
 setupbuyBookModal();
 
+// Initialize the visibility check on page load
+setupPasswordVisibilityOnLoad();
+
+// Initialize other modules...
+setupPhotoInfoToggle(); // Initialize the photo info toggle logic
+
 // Initialize photo visibility toggle logic for watermark vs enhanced image
 setupPhotoVisibilityToggle();
 
@@ -48,6 +55,3 @@ setupPasswordForm();
 
 // Check if the password has already been entered on page load
 checkPassword();
-
-// Initialize other modules...
-setupPhotoInfoToggle(); // Initialize the photo info toggle logic

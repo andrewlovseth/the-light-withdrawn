@@ -39,7 +39,7 @@ function wp_custom_password_form() {
     // Check if the 'site_password' cookie is set and has the correct value
     if (isset($_COOKIE['site_password']) && $_COOKIE['site_password'] === 'entered') {
         // If the password is already entered, show a success message instead of the form
-        return '<div class="password-form__message success">Success! You can now view the content.</div>';
+        return '<div class="password-form__message success">You have already entered the correct password.</div>';
     }
 
     // If the cookie is not set or doesn't have the correct value, display the form
@@ -56,6 +56,4 @@ function wp_custom_password_form() {
     <?php
     return ob_get_clean();
 }
-
-// Register the shortcode for the password form
 add_shortcode('bearsmith_password_form', 'wp_custom_password_form');

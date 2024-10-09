@@ -3,6 +3,7 @@ export function setupPasswordForm() {
         const passwordForm = document.getElementById("password-form");
         const correctPassword = "SimonSchuster"; // Hardcoded password
 
+        // Check if the form exists
         if (passwordForm) {
             passwordForm.addEventListener("submit", function (e) {
                 e.preventDefault(); // Prevent default form submission
@@ -39,6 +40,7 @@ export function setupPasswordForm() {
                         // Hide the modal if present
                         if (modalDIV) {
                             modalDIV.close(); // Close the modal using dialog's close method
+                            modalDIV.remove(); // Remove the modal from the DOM if needed
 
                             // Show the growl-style success notification
                             showGrowlNotification("Success! You have entered the correct password.");
@@ -60,7 +62,6 @@ export function setupPasswordForm() {
         }
     });
 }
-
 // Function to show the growl notification
 function showGrowlNotification(message) {
     // Create the notification element
@@ -84,11 +85,13 @@ function showGrowlNotification(message) {
 function togglePhotoVisibility() {
     const watermarkEl = document.querySelector(".photo__preview-enhanced-watermark");
     const enhancedEl = document.querySelector(".photo__preview-enhanced-full");
+    const highResDownloadEl = document.getElementById("high-res-download");
 
-    if (watermarkEl && enhancedEl) {
+    if (watermarkEl && enhancedEl && highResDownloadEl) {
         // Remove 'active' class from the watermark and add it to the full-resolution image
         watermarkEl.classList.remove("active");
         enhancedEl.classList.add("active");
+        highResDownloadEl.style.display = "inline-block"; // Show download link
     }
 }
 

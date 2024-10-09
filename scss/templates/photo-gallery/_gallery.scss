@@ -13,10 +13,20 @@
     }
 
     &__items {
-        padding: $spacing-900 0;
         display: grid;
         gap: $spacing-700 $spacing-800;
-        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+        padding: $spacing-600 0;
+
+        @include mq(desktop-small) {
+            padding: $spacing-900 0;
+            grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        }
+
+        @include mq(desktop-large) {
+            padding: $spacing-900 0;
+            grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        }
     }
 
     &__item {
@@ -41,16 +51,31 @@
     &__photo {
         border-radius: 50%;
         border: 1px solid transparent;
-        width: 14rem;
-        height: 14rem;
+
         display: flex;
         place-items: center;
         transition: all 600ms ease;
 
+        @include mq(desktop-small) {
+            width: 10rem;
+            height: 10rem;
+        }
+
+        @include mq(desktop-large) {
+            width: 14rem;
+            height: 14rem;
+        }
+
         img {
             border-radius: 50%;
-            width: 12.5rem;
             margin: 0 auto;
+            @include mq(desktop-small) {
+                width: 8.5rem;
+            }
+
+            @include mq(desktop-large) {
+                width: 12.5rem;
+            }
         }
     }
 

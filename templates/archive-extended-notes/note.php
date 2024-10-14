@@ -14,7 +14,7 @@
 
 <div class="single-note">
     <div class="single-note__title">
-        <a href="<?php echo $file['url']; ?>" target="window"><?php echo $display_title; ?></a>
+        <a href="<?php echo $file['url']; ?>"><?php echo $display_title; ?></a>
     </div>
 
     <div class="single-note__pages">

@@ -32,9 +32,10 @@
         a {
             display: inline-block;
             text-transform: uppercase;
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             border-bottom: 1px solid transparent;
             transition: all 300ms ease;
+            font-weight: 600;
 
             &:hover,
             &.active {

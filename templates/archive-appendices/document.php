@@ -14,7 +14,7 @@
 
 <div class="appendix">
     <h4 class="appendix__label"><?php echo $label; ?></h4>
-    <a class="appendix__link" href="<?php echo $file['url']; ?>" target="window">
+    <a class="appendix__link" href="<?php echo $file['url']; ?>">
         <?php echo $title; ?>
     </a>
 </div>

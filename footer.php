@@ -7,6 +7,8 @@
 
 		<?php get_template_part('components/footer/social-links'); ?>
 
+		<?php get_template_part('components/footer/legal-links'); ?>
+
 		<?php get_template_part('components/footer/copyright'); ?>
 
 	</footer>

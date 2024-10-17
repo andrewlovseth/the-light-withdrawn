@@ -294,7 +294,7 @@ body.modal-open {
 
         @include mq(tablet) {
             text-wrap: balance;
-            padding: $spacing-400 $spacing-800 $spacing-300;
+            padding: $spacing-400 $spacing-600 $spacing-300;
         }
     }
 }

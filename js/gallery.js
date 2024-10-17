@@ -12,7 +12,7 @@ export function setupPhotoGalleryHeroReveal() {
         }
 
         // Set height after a delay and on window resize
-        setTimeout(setRevealContainerHeight, 2000);
+        setTimeout(setRevealContainerHeight, 500);
         window.addEventListener("resize", setRevealContainerHeight);
     });
 }

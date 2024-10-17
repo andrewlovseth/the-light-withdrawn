@@ -23,6 +23,9 @@ export function setupPaginationTabs() {
 
                 activeLink.classList.add("active");
                 inactiveLink.classList.remove("active");
+
+                // Scroll to the newly active page
+                pageToShow.scrollIntoView({ behavior: "smooth" });
             }
 
             // Event listener for page-1 link

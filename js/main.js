@@ -2,15 +2,16 @@ import { setActiveNavLinks, setActivePaginationLinks } from "./nav.js?v=1.1";
 import { setupPhotoGalleryHeroReveal, adjustGalleryPadding } from "./gallery.js?v=1.1";
 import { setupNoteModals } from "./noteModals.js?v=1.1";
 import { setupPhotoTabs } from "./photoTabs.js?v=1.1";
-import { setupPasswordModal } from "./passwordModal.js?v=1.1";
+import { setupPasswordModal } from "./passwordModal.js?v=1.2";
 import { setupMobileNav } from "./mobileNav.js?v=1.1";
-import { setupPaginationTabs } from "./paginationTabs.js?v=1.1";
+import { setupPaginationTabs } from "./paginationTabs.js?v=1.2";
 import { setupToggleExtraCopy } from "./toggleExtraCopy.js?v=1.1";
 import { setupbuyBookModal } from "./buyBookModal.js?v=1.1";
 import { setupPhotoVisibilityToggle } from "./photoVisibility.js?v=1.1";
 import { setupPasswordForm, checkPassword } from "./passwordForm.js?v=1.5";
 import { setupPhotoInfoToggle } from "./photoInfoToggle.js?v=1.1";
 import { setupPasswordVisibilityOnLoad } from "./passwordVisibility.js?v=1.0"; // Assuming it's in a separate file
+import { praiseCarousel } from "./swiper.js?v=1.0";
 
 // Initialize navigation logic
 setActiveNavLinks();
@@ -55,3 +56,6 @@ setupPasswordForm();
 
 // Check if the password has already been entered on page load
 checkPassword();
+
+// Initialize swiper
+praiseCarousel();

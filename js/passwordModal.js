@@ -4,6 +4,12 @@ export function setupPasswordModal() {
         const closeModalBtn = document.getElementById("close-btn");
         const dismissModalBtn = document.getElementById("dismiss-btn");
         const passwordForm = document.getElementById("password-form");
+        const body = document.body;
+
+        // Check if the page has a body with the class 'postid-200'
+        if (body.classList.contains("postid-200")) {
+            return; // Do nothing and exit the function
+        }
 
         // Check if the modal exists
         if (modal) {

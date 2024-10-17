@@ -1,0 +1,77 @@
+@use "./abstracts" as *;
+
+.contact {
+    &__form {
+        &-wrapper {
+            @include mq(tablet-small) {
+                grid-column: 3 / span 6;
+            }
+
+            @include mq(desktop-small) {
+                grid-column: 4 / span 8;
+            }
+
+            @include mq(desktop-medium) {
+                grid-column: 5 / span 6;
+            }
+        }
+
+        .wpforms-container-full {
+            --wpforms-field-size-input-spacing: 12px;
+            --wpforms-button-background-color: #8acad7;
+            --wpforms-button-text-color: #313948;
+            --wpforms-button-border-radius: 0;
+            --wpforms-button-size-padding-h: 24px;
+            --wpforms-field-border-radius: 0;
+
+            .wpforms-field {
+                padding: $spacing-200 0;
+            }
+            .wpforms-form {
+                input[type="text"],
+                input[type="email"],
+                textarea {
+                    font-family: $sometype-mono;
+                    font-size: $type-size-200;
+                    color: $gray-950;
+
+                    @include placeholder {
+                        color: $gray-400;
+                        font-style: italic;
+                        opacity: 1;
+                    }
+                }
+                label.wpforms-error,
+                em.wpforms-error {
+                    font-family: $sometype-mono;
+                    font-size: $type-size-100;
+                }
+                button[type="submit"] {
+                    font-family: $golden-wf;
+                    text-transform: uppercase;
+                    color: $navy;
+                    font-size: $type-size-200;
+                    letter-spacing: 0.05em;
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+
+            .wpforms-confirmation-container-full,
+            div[submit-success] > .wpforms-confirmation-container-full:not(.wpforms-redirection-message) {
+                display: block;
+                margin: 0 auto;
+                background-color: #16a34a;
+                border: unset;
+                padding: $spacing-200;
+                text-align: center;
+                font-family: $sometype-mono;
+                font-size: $type-size-300;
+
+                p {
+                    color: $gray-0;
+                }
+            }
+        }
+    }
+}

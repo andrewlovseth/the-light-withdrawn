@@ -37,7 +37,7 @@ if(have_rows('special_features')): while(have_rows('special_features')): the_row
                         <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
                     </h2>
 
-                    <div class="special-features__copy | copy copy-2">
+                    <div class="special-features__copy | copy copy-1">
                         <?php echo $copy; ?>
                     </div>
                 </div>

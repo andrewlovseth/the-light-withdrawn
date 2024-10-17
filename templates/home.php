@@ -14,6 +14,8 @@ get_header(); ?>
 
     <?php get_template_part('templates/home/praise'); ?>
 
+    <?php get_template_part('templates/home/events'); ?>
+
     <?php get_template_part('templates/home/author'); ?>
 
 <?php get_footer(); ?>

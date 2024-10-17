@@ -1,0 +1,46 @@
+@forward "event";
+
+@forward "events-list";
+
+@forward "no-events";
+
+@use "./abstracts" as *;
+
+.post-type-archive-events {
+    .events__list {
+        --gap: 2rem;
+        --line-offset: calc(var(--gap) / 2);
+        --line-thickness: 1px;
+        --line-color: #bdbdbd;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+        overflow: hidden;
+        gap: var(--gap);
+        overflow: hidden;
+        padding-bottom: $spacing-900;
+
+        // Make Grid Items Control Absolute Pseudo Positioning
+        .event {
+            position: relative;
+            padding: $spacing-600 0;
+        }
+
+        // Pseudo Element Shared Styling
+        .event::before,
+        .event::after {
+            content: "";
+            position: absolute;
+            background-color: var(--line-color);
+            z-index: 1;
+        }
+
+        // Row Borders
+        .event::after {
+            inline-size: 100vw;
+            block-size: var(--line-thickness);
+            inset-inline-start: 0;
+            inset-block-start: calc(var(--line-offset) * -1);
+        }
+    }
+}

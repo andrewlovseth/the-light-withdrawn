@@ -12,7 +12,7 @@
     }
 
     @include mq(desktop-small) {
-        grid-template-columns: minmax(0, 1fr) 24rem minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr) 28rem minmax(0, 1fr);
     }
 
     .site-logo {

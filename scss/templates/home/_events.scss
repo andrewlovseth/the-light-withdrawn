@@ -1,0 +1,15 @@
+@use "./abstracts" as *;
+
+.events__cta-link {
+    display: inline-block;
+    font-family: $golden-wf;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: $type-size-100;
+    border-bottom: 1px solid transparent;
+    transition: all 150ms ease;
+
+    &:hover {
+        border-color: $blue;
+    }
+}

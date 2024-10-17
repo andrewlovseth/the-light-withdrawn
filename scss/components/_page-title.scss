@@ -1,0 +1,21 @@
+@use "./abstracts" as *;
+
+.page-title {
+    text-align: center;
+    padding: $spacing-600 0 $spacing-800;
+
+    @include mq(desktop-small) {
+        padding: $spacing-700 0 $spacing-900;
+    }
+
+    h1 {
+        font-size: $type-size-900;
+        font-variant: small-caps;
+        font-weight: normal;
+        letter-spacing: 0.1em;
+
+        @include mq(desktop-small) {
+            font-size: $type-size-800;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+@use "./abstracts" as *;
+
+.event {
+    text-align: center;
+    color: $gray-950;
+
+    &__header {
+        &::after {
+            display: block;
+            content: "";
+            width: 50%;
+            max-width: 6rem;
+            height: 2px;
+            margin: $spacing-400 auto 0 auto;
+            background: $blue;
+        }
+    }
+
+    &__title {
+        font-family: $ideal-sans;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: $type-size-400;
+        letter-spacing: 0.05em;
+        padding-bottom: $spacing-200;
+    }
+
+    &__date-time {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__date,
+    &__time {
+        font-size: $type-size-300;
+        font-family: $ideal-sans;
+        font-weight: normal;
+        letter-spacing: 0.025em;
+        display: block;
+        padding: 0 $spacing-200;
+        line-height: 1.2em;
+    }
+
+    &__time {
+        border-left: 1px solid $gray-950;
+    }
+
+    &__body {
+        padding: $spacing-300 0 $spacing-500 0;
+    }
+
+    &__link {
+        background: $gray-0;
+        font-size: 0.75rem;
+        font-family: $ideal-sans;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        border: 1px solid $blue;
+        display: inline-block;
+        padding: $spacing-050 $spacing-300;
+        transition: all 300ms ease;
+
+        &:hover {
+            background: $blue;
+            color: $gray-950;
+        }
+    }
+}

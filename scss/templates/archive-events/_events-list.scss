@@ -1,0 +1,18 @@
+@use "./abstracts" as *;
+
+.events__list {
+    display: grid;
+    gap: $spacing-800 0;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+}
+
+.events-header__copy {
+    text-wrap: balance;
+    text-align: center;
+    padding: $spacing-400 0 $spacing-600 0;
+}
+
+.events__cta-all {
+    text-align: center;
+    padding-bottom: $spacing-800;
+}

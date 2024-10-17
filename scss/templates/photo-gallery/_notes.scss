@@ -293,7 +293,6 @@ body.modal-open {
         font-family: $golden-wf;
 
         @include mq(tablet) {
-            font-size: $type-size-400;
             text-wrap: balance;
             padding: $spacing-400 $spacing-800 $spacing-300;
         }

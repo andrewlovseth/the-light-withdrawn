@@ -1,7 +1,7 @@
 <section class="gallery | content-grid">
 
     <?php $items = get_field('list'); if( $items ): ?>
-        <div id="page-1">
+        <div class="gallery__page" id="page-1">
             <div class="gallery__items">
 
                 <?php foreach( $items as $i ): ?>
@@ -18,7 +18,7 @@
     <?php endif; ?>
 
     <?php $page_2_items = get_field('page_2'); if( $page_2_items ): ?>
-        <div id="page-2">
+        <div class="gallery__page" id="page-2">
             <div class="gallery__items">
 
                 <?php foreach( $page_2_items as $i ): ?>

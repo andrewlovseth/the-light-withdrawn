@@ -12,6 +12,12 @@
         padding-top: $spacing-600 !important;
     }
 
+    &__page {
+        @include mq(desktop-small) {
+            grid-column: 3 / span 10;
+        }
+    }
+
     &__items {
         display: grid;
         gap: $spacing-700 $spacing-800;
@@ -25,17 +31,20 @@
 
         @include mq(desktop-large) {
             padding: $spacing-900 0;
-            grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
         }
     }
 
     &__item {
         display: grid;
         place-items: center;
+        text-align: center;
     }
 
     &__link {
         display: block;
+        width: 100%;
+        text-align: center;
 
         &:hover {
             .gallery__photo {
@@ -51,9 +60,11 @@
     &__photo {
         border-radius: 50%;
         border: 1px solid transparent;
+        margin: 0 auto;
 
         display: flex;
-        place-items: center;
+        justify-content: center;
+        align-items: center;
         transition: all 600ms ease;
 
         @include mq(desktop-small) {
@@ -62,19 +73,23 @@
         }
 
         @include mq(desktop-large) {
-            width: 14rem;
-            height: 14rem;
+            width: 12rem;
+            height: 12rem;
         }
 
         img {
             border-radius: 50%;
             margin: 0 auto;
+            aspect-ratio: 1 / 1;
+
             @include mq(desktop-small) {
                 width: 8.5rem;
+                height: 8.5rem;
             }
 
             @include mq(desktop-large) {
-                width: 12.5rem;
+                width: 10.5rem;
+                height: 10.5rem;
             }
         }
     }

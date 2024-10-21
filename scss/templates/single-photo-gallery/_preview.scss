@@ -2,15 +2,13 @@
 .photo {
     &__preview {
         display: grid;
-        gap: $spacing-600;
+        gap: $spacing-400;
         align-items: center;
-        grid-template-areas:
-            "prev next"
-            "pane pane";
+        grid-template-areas: "prev pane next";
+        grid-template-columns: 1rem 1fr 1rem;
 
         @include mq(desktop-medium) {
-            grid-template-areas: "prev pane next";
-            grid-template-columns: 2rem 1fr 2rem;
+            grid-template-columns: 1.5rem 1fr 1.5rem;
         }
 
         &-pane {
@@ -100,10 +98,12 @@
         }
 
         svg {
-            height: 2rem;
+            width: 1rem;
+            height: 1.5rem;
 
             @include mq(desktop-medium) {
-                height: 3rem;
+                width: 1.5rem;
+                height: 2.25rem;
             }
         }
     }

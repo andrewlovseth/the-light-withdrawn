@@ -18,7 +18,7 @@
             <?php echo $copy; ?>
         </div>
 
-        <div class="note__instructions | copy copy-2">
+        <div class="note__instructions | copy copy-1">
             <p><?php echo $instructions; ?></p>
         </div>
 

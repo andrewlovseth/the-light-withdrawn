@@ -5,10 +5,14 @@ export function praiseCarousel() {
         // Optional parameters
         direction: "horizontal",
         loop: true,
+        speed: 3000,
         autoplay: {
             delay: 10000,
         },
-
+        effect: "fade",
+        fadeEffect: {
+            crossFade: true,
+        },
         // If we need pagination
         pagination: {
             el: ".swiper-pagination",

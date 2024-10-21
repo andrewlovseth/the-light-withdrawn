@@ -32,7 +32,7 @@
     &__photo {
         position: relative;
         @include mq(desktop-small) {
-            grid-column: 4 / span 8;
+            grid-column: 6 / span 4;
         }
     }
 
@@ -108,7 +108,7 @@
             }
 
             &-wrapper {
-                background: $cream;
+                background: $gray-0;
                 width: 100%;
                 max-width: 100%;
                 padding: $spacing-600;
@@ -140,7 +140,8 @@
                 max-height: 50vh;
 
                 @include mq(desktop-small) {
-                    max-height: 12rem;
+                    max-height: unset;
+                    overflow-y: unset;
                 }
             }
         }
@@ -154,6 +155,23 @@
     .note__feature-ring {
         animation-delay: 0s;
     }
+
+    .note__feature {
+        &-modal {
+            @include mq(desktop-small) {
+                right: 1rem;
+                left: auto;
+                bottom: 3rem;
+            }
+            &-line {
+                bottom: 17px;
+                right: -24px;
+                left: auto;
+                rotate: -135deg;
+                width: 150px;
+            }
+        }
+    }
 }
 
 #note__feature-2 {
@@ -162,6 +180,23 @@
 
     .note__feature-ring {
         animation-delay: 0.596s;
+    }
+
+    .note__feature {
+        &-modal {
+            @include mq(desktop-small) {
+                right: 1.5rem;
+                left: auto;
+                bottom: 3rem;
+            }
+            &-line {
+                bottom: 17px;
+                right: -32px;
+                left: auto;
+                rotate: -135deg;
+                width: 150px;
+            }
+        }
     }
 }
 
@@ -172,11 +207,42 @@
     .note__feature-ring {
         animation-delay: 0.981s;
     }
+
+    .note__feature {
+        &-modal {
+            @include mq(desktop-small) {
+                right: 2.5rem;
+                left: auto;
+                bottom: 3rem;
+            }
+            &-line {
+                bottom: 17px;
+                right: -48px;
+                left: auto;
+                rotate: -135deg;
+                width: 150px;
+            }
+        }
+    }
 }
 
 #note__feature-4 {
     top: 18%;
     left: 46%;
+
+    .note__feature {
+        &-modal {
+            @include mq(desktop-small) {
+                left: 6.5rem;
+            }
+            &-line {
+                bottom: 42px;
+                left: -114px;
+                rotate: 135deg;
+                width: 150px;
+            }
+        }
+    }
 
     .note__feature-ring {
         animation-delay: 1.311s;
@@ -188,25 +254,17 @@
     left: 70%;
 
     .note__feature-modal {
-        @include mq(tablet) {
-            left: -2rem;
-            bottom: 3rem;
-        }
-
-        @include mq(desktop-medium) {
-            left: 3.5rem;
+        @include mq(desktop-small) {
+            left: 2.5rem;
             bottom: 1.5rem;
         }
 
         &-line {
-            @include mq(tablet) {
-                bottom: 16px;
-                left: 15px;
-            }
-
-            @include mq(desktop-medium) {
-                bottom: 39px;
-                left: -73px;
+            @include mq(desktop-small) {
+                bottom: 42px;
+                left: -50px;
+                rotate: 135deg;
+                width: 150px;
             }
         }
     }

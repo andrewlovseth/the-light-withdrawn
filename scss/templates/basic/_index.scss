@@ -38,6 +38,10 @@
                     margin-bottom: $spacing-400;
                 }
             }
+
+            &.one-item {
+                list-style-type: none;
+            }
         }
     }
 }

@@ -24,6 +24,8 @@
     }
 
     &-pagination-bullet {
+        --swiper-pagination-bullet-size: 16px;
+        --swiper-pagination-bullet-horizontal-gap: 8px;
         --swiper-pagination-bullet-inactive-color: #faf7f3;
         &-active {
             --swiper-pagination-color: #faf7f3;

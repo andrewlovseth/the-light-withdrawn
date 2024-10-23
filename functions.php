@@ -14,4 +14,4 @@ require_once( plugin_dir_path( __FILE__ ) . '/functions/svg.php');
 
 require_once( plugin_dir_path( __FILE__ ) . '/functions/photo-gallery-pagination.php');
 
-
+require_once( plugin_dir_path( __FILE__ ) . '/functions/batch-download.php');

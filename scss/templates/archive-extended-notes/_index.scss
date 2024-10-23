@@ -12,6 +12,14 @@
     }
 }
 
+.extended-notes__list {
+    padding-top: $spacing-600;
+
+    @include mq(desktop-small) {
+        padding-top: $spacing-800;
+    }
+}
+
 .single-note {
     display: grid;
     gap: $spacing-400;
@@ -19,7 +27,7 @@
     align-items: center;
 
     @include mq(desktop-small) {
-        padding-left: $spacing-600;
+        padding-left: $spacing-200;
     }
 
     &__title {
@@ -54,21 +62,21 @@
     align-items: center;
 
     @include mq(desktop-small) {
-        padding-left: $spacing-600;
+        padding-left: $spacing-200;
     }
 
     &__title {
         font-size: $type-size-500;
         padding-bottom: $spacing-300;
         border-bottom: 1px solid $gray-950;
-        margin-bottom: $spacing-500;
+        margin-bottom: $spacing-200;
 
         a {
-            display: block;
+            display: inline-block;
             line-height: 1.4em;
+
             &:hover {
-                .part-title {
-                }
+                text-decoration: underline;
             }
         }
 

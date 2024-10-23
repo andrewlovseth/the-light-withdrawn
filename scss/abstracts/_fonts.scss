@@ -1,6 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap");
+// Garamond
+@import url("https://use.typekit.net/beg0oxx.css");
+$garamond: "garamond-premier-pro", serif;
+$garamond-display: "garamond-premier-pro-display", serif;
 
-$garamond: "EB Garamond", serif;
+// Sometype Mono
+@import url("https://fonts.googleapis.com/css2?family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap");
 $sometype-mono: "Sometype Mono", monospace;
 
 // Ideal Sans
@@ -10,9 +14,9 @@ $sometype-mono: "Sometype Mono", monospace;
     font-weight: normal;
     font-style: normal;
 }
-
 $ideal-sans: "ideal_sansbook", sans-serif;
 
+// Golden
 @font-face {
     font-family: "golden_wfregular";
     src: url("fonts/goldenwf-webfont.woff2") format("woff2");

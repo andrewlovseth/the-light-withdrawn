@@ -2,33 +2,84 @@
 
 .documents {
     padding: $spacing-600 0;
+    position: relative;
 
     @include mq(desktop-small) {
         padding: $spacing-800 0;
     }
 
     &__sidebar {
-        @include mq(tablet-small) {
-            grid-column: 3 / span 6;
-        }
         @include mq(desktop-small) {
             grid-column: 3 / span 3;
+            position: sticky;
+            top: $spacing-600;
+            align-self: start;
         }
     }
 
     .book-cover {
         max-width: 24rem;
+        aspect-ratio: 663 / 1000;
+
+        @media screen and (max-height: 50rem) {
+            height: 16rem;
+        }
+    }
+
+    &__selected {
+        padding-top: $spacing-600;
+        font-family: $ideal-sans;
+
+        p {
+            font-size: 1rem;
+            padding-bottom: $spacing-200;
+        }
+
+        &-actions {
+            padding-bottom: $spacing-400;
+            display: flex;
+        }
+
+        &-action {
+            line-height: 1;
+            & + .documents__selected-action {
+                margin-left: $spacing-400;
+                border-left: 2px solid $gray-950;
+                padding-left: $spacing-400;
+            }
+
+            a {
+                display: inline-block;
+                line-height: 1;
+                border-bottom: 2px solid transparent;
+                transition: all 150ms ease;
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-weight: bold;
+                padding-bottom: $spacing-100;
+                color: $gray-1000;
+
+                &:hover {
+                    border-color: $blue;
+                }
+
+                & + a {
+                    margin-left: $spacing-400;
+                    border-left: 2px solid $gray-950;
+                    padding-left: $spacing-400;
+                }
+            }
+        }
     }
 
     &__download-all {
         padding-top: $spacing-600;
+        border-top: 1px solid $gray-200;
+        margin-top: $spacing-600;
     }
 
     &__list {
-        @include mq(tablet-small) {
-            grid-column: 3 / span 6;
-        }
-
         @include mq(desktop-small) {
             grid-column: 6 / span 7;
         }
@@ -46,6 +97,17 @@
         border: 1px solid $blue;
         padding: 6px 8px;
         transition: all 150ms ease;
+        background: transparent;
+
+        &[disabled] {
+            opacity: 0.25;
+            pointer-events: none;
+            border-color: $gray-400;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
 
         svg path {
             fill: $navy;
@@ -67,5 +129,33 @@
         height: $spacing-200;
         border-top: 1px solid $gray-950;
         border-bottom: 1px solid $gray-950;
+    }
+}
+#batch-download-form {
+    display: grid;
+    padding-top: $spacing-600;
+}
+.post-type-archive-extended-notes {
+    #batch-download-form {
+        gap: $spacing-600;
+    }
+}
+
+.document-item {
+    display: flex;
+    border-radius: $spacing-100;
+    border: 1px solid transparent;
+    padding: 0 $spacing-200;
+    transition: all 150ms ease;
+    &:hover {
+        background: hsl(38, 44%, 93%);
+        border: 1px solid hsl(38, 44%, 88%);
+    }
+
+    label {
+        width: 100%;
+        cursor: pointer;
+        transition: all 150ms ease;
+        padding: $spacing-300 $spacing-200;
     }
 }

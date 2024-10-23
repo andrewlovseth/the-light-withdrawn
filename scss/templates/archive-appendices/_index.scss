@@ -2,8 +2,6 @@
 
 .appendices {
     &__list {
-        display: grid;
-        gap: 2rem;
         padding-top: $spacing-600;
 
         @include mq(desktop-small) {
@@ -14,7 +12,7 @@
 
 .appendix {
     @include mq(desktop-small) {
-        padding-left: $spacing-600;
+        padding-left: $spacing-200;
     }
 
     &__label {

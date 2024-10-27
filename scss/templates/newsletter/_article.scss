@@ -1,0 +1,191 @@
+@use "./abstracts" as *;
+
+.article {
+    padding: $spacing-600 0;
+    & > * {
+        @include mq(tablet) {
+            grid-column: 3 / span 6;
+        }
+        @include mq(desktop-small) {
+            grid-column: 5 / span 6;
+        }
+    }
+
+    &-header {
+        padding-bottom: $spacing-400;
+        border-bottom: 1px solid $gray-500;
+
+        @include mq(desktop-small) {
+            padding-bottom: $spacing-600;
+        }
+    }
+
+    &__image {
+        display: grid;
+        gap: $spacing-400;
+        margin-bottom: $spacing-700;
+        align-items: end;
+
+        @include mq(tablet) {
+            grid-template-columns: auto 1fr;
+        }
+
+        @include mq(desktop-small) {
+            margin-bottom: $spacing-800;
+        }
+
+        img {
+            height: 24rem;
+            width: auto;
+        }
+
+        &-caption {
+            font-size: $type-size-200;
+            font-family: $ideal-sans;
+
+            @include mq(tablet) {
+                max-width: 12rem;
+            }
+        }
+    }
+
+    &__title {
+        font-size: $type-size-900;
+        font-weight: 500;
+    }
+
+    &-body {
+        p {
+            &:first-child::first-line {
+                font-variant: small-caps;
+                letter-spacing: 0.05em;
+            }
+
+            & + p {
+                text-indent: 1.5em;
+            }
+        }
+
+        .indent {
+            padding: $spacing-600 0 $spacing-600 $spacing-800;
+
+            & + .indent {
+                padding-top: 0;
+            }
+        }
+
+        blockquote {
+            text-align: center;
+
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                width: 153px;
+                height: 33px;
+                background: url("img/pullquote-stars.jpg") no-repeat center center / contain;
+                margin: $spacing-600 auto;
+                mix-blend-mode: multiply;
+            }
+
+            p {
+                font-size: $type-size-700;
+                font-weight: 500;
+                text-wrap: balance;
+                line-height: 1.2;
+
+                &:first-child::first-line {
+                    font-variant: unset;
+                    letter-spacing: unset;
+                }
+            }
+        }
+
+        img {
+            margin: $spacing-600 auto;
+            max-width: 20rem;
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: $spacing-600;
+
+        &-link {
+            display: flex;
+            align-items: center;
+            gap: $spacing-200;
+            font-family: $ideal-sans;
+            font-size: $type-size-300;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__subscribe {
+        border-top: 1px solid $gray-500;
+        display: grid;
+        gap: $spacing-400;
+        padding: $spacing-600 0;
+
+        @include mq(tablet) {
+            grid-template-columns: 1fr 6rem;
+        }
+
+        @include mq(desktop-medium) {
+            padding: $spacing-600;
+        }
+
+        &-form {
+        }
+
+        &-title {
+            font-size: $type-size-400;
+            font-weight: 400;
+            font-family: $ideal-sans;
+            padding-bottom: $spacing-400;
+        }
+
+        &-icon {
+            grid-row: 1;
+
+            @include mq(tablet) {
+                grid-row: unset;
+            }
+
+            img {
+                mix-blend-mode: multiply;
+                max-width: 6rem;
+                margin: 0 auto;
+            }
+        }
+
+        .subscribe {
+            &__form {
+                display: flex;
+                gap: 0;
+                align-content: center;
+                flex-direction: row;
+            }
+            &__input {
+                width: unset;
+                flex: 1;
+                background: transparent;
+            }
+
+            &__btn {
+                background-color: #c6aeba;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-weight: 500;
+                border: 1px solid $gray-500;
+                border-left: none;
+            }
+        }
+    }
+}

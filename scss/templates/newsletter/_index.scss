@@ -8,6 +8,8 @@
 
 @forward "subscribe";
 
+@forward "article";
+
 @use "./abstracts" as *;
 
 body.blog,

@@ -7,7 +7,9 @@
 
 <section class="masthead | content-grid">
     <div class="masthead__image">
-        <?php echo wp_get_attachment_image($image['ID'], 'full'); ?>
+        <a href="<?php echo site_url('/newsletter/'); ?>">
+            <?php echo wp_get_attachment_image($image['ID'], 'full'); ?>
+        </a>
     </div>
 
     <div class="masthead__title">

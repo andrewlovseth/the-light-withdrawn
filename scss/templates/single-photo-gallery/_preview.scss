@@ -56,17 +56,17 @@
             align-items: center;
             text-align: center;
             flex: 1;
-            font-family: $golden-wf;
+            font-family: $ideal-sans;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.2em;
             border: 1px solid $blue;
             padding: $spacing-200 $spacing-200;
             color: $blue;
             transition: all 300ms ease;
-            font-size: $type-size-050;
+            font-size: $type-size-100;
 
             @include mq(desktop-small) {
-                font-size: $type-size-100;
+                font-size: $type-size-200;
             }
 
             &:hover,

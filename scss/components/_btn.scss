@@ -2,11 +2,12 @@
 
 .btn {
     display: inline-block;
-    font-family: $golden-wf;
+    font-family: $ideal-sans;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
     background: $blue;
     color: $navy;
     line-height: 0.875em;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     padding: $spacing-200 $spacing-300;
 }

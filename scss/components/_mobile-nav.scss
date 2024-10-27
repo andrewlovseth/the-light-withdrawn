@@ -58,10 +58,12 @@
     &-link {
         display: block;
         color: $gray-0;
-        font-family: $golden-wf;
+        font-family: $ideal-sans;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
-        font-size: $type-size-100;
+        font-size: $type-size-200;
         transition: all 150ms ease;
+        font-weight: 500;
 
         &:hover {
             color: $blue;

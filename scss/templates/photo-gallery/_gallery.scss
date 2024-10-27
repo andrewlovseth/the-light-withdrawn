@@ -121,11 +121,16 @@
             width: $spacing-800;
             height: $spacing-800;
             border-radius: 50%;
-            font-family: $golden-wf;
-            font-size: $type-size-500;
+            font-family: $ideal-sans;
+            font-size: $type-size-600;
             transition: all 300ms ease;
             color: $cream;
             background: transparent;
+
+            span {
+                display: block;
+                transform: translateY(-3px);
+            }
 
             &:hover,
             &.active {

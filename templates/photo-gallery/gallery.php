@@ -38,11 +38,11 @@
         <ul class="gallery__pagination-items" role="nav">
 
             <li class="gallery__pagination-item">
-                <a class="gallery__pagination-link" href="#page-1">1</a>
+                <a class="gallery__pagination-link" href="#page-1"><span>1</span></a>
             </li>
 
             <li class="gallery__pagination-item">
-                <a class="gallery__pagination-link" href="#page-2">2</a>
+                <a class="gallery__pagination-link" href="#page-2"><span>2</span></a>
             </li>
 
         </ul>

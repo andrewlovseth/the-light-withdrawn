@@ -346,9 +346,10 @@ body.modal-open {
         z-index: 2;
         max-width: 80%;
         margin: 0 auto;
-        font-size: $type-size-300;
+        font-size: $type-size-400;
         text-transform: uppercase;
-        font-family: $golden-wf;
+        font-family: $ideal-sans;
+        letter-spacing: 0.2em;
 
         @include mq(tablet) {
             text-wrap: balance;

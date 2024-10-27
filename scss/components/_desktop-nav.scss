@@ -3,7 +3,7 @@
 .site-header__desktop {
     padding: $spacing-600;
     align-items: center;
-    font-family: $golden-wf;
+    font-family: $ideal-sans;
     display: none;
 
     @include mq(tablet) {
@@ -32,6 +32,7 @@
         a {
             display: inline-block;
             text-transform: uppercase;
+            letter-spacing: 0.2em;
             font-size: 0.875rem;
             border-bottom: 1px solid transparent;
             transition: all 300ms ease;

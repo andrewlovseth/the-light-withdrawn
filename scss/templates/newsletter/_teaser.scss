@@ -1,0 +1,73 @@
+@use "./abstracts" as *;
+.teaser {
+    &-large {
+        display: grid;
+        gap: $spacing-600;
+
+        @include mq(tablet-small) {
+            grid-template-columns: 12rem 2fr;
+        }
+
+        @include mq(desktop-medium) {
+            padding-left: $spacing-600;
+            gap: $spacing-800;
+        }
+
+        & + .teaser-large {
+            margin-top: $spacing-600;
+            border-top: 1px solid $gray-400;
+            padding-top: $spacing-600;
+        }
+
+        &__image {
+            max-width: 12rem;
+        }
+
+        &__info {
+            @include mq(tablet-small) {
+                padding-top: $spacing-200;
+            }
+        }
+
+        &__title {
+            font-size: $type-size-700;
+            font-weight: 500;
+
+            a:hover {
+                text-decoration: underline;
+                text-decoration-thickness: 1.5px;
+                text-underline-offset: 2px;
+            }
+        }
+        &__copy {
+            font-style: italic;
+            line-height: 1.2;
+            padding-top: $spacing-300;
+        }
+    }
+
+    &-small {
+        display: grid;
+        gap: $spacing-100;
+
+        align-content: start;
+
+        @include mq(desktop-small) {
+            gap: $spacing-400;
+        }
+
+        &__title {
+            font-size: $type-size-600;
+            font-weight: 500;
+
+            a:hover {
+                text-decoration: underline;
+                text-decoration-thickness: 1.5px;
+                text-underline-offset: 2px;
+            }
+        }
+        &__copy {
+            font-style: italic;
+        }
+    }
+}

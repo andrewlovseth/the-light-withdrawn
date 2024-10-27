@@ -1,0 +1,50 @@
+@use "./abstracts" as *;
+.posts {
+    &__featured {
+        align-items: start;
+        padding-top: $spacing-600;
+        .subscribe {
+            @include mq(desktop-small) {
+                grid-column: 9 / span 5;
+            }
+
+            @include mq(desktop-medium) {
+                grid-column: 10 / span 3;
+            }
+        }
+    }
+
+    &__list {
+        @include mq(desktop-small) {
+            grid-column: 2 / span 7;
+        }
+
+        @include mq(desktop-medium) {
+            grid-column: 3 / span 7;
+        }
+    }
+
+    &__archive {
+        padding: $spacing-700 0;
+
+        .fancy-header {
+            @include mq(desktop-medium) {
+                grid-column: 3 / span 10;
+            }
+        }
+
+        &-grid {
+            display: grid;
+            gap: $spacing-600;
+
+            @include mq(desktop-small) {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            @include mq(desktop-medium) {
+                grid-column: 3 / span 10;
+                gap: $spacing-800;
+            }
+        }
+    }
+}

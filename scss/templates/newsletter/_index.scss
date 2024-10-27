@@ -1,0 +1,18 @@
+@forward "masthead";
+
+@forward "about";
+
+@forward "posts";
+
+@forward "teaser";
+
+@forward "subscribe";
+
+@use "./abstracts" as *;
+
+body.blog,
+body.single-post {
+    .site-content {
+        background: url("img/newsletter-bg.jpg") repeat-y center center / 100% auto;
+    }
+}

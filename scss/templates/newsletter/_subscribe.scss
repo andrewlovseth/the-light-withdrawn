@@ -1,0 +1,94 @@
+@use "./abstracts" as *;
+
+.subscribe {
+    background: $light-blue;
+    border: 1px solid $gray-1000;
+    position: relative;
+    padding: $spacing-600;
+    display: grid;
+    gap: $spacing-400;
+    align-content: start;
+    max-width: 24rem;
+    margin: 0 auto;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 4px;
+        border: 1px solid $gray-1000;
+        z-index: 1;
+    }
+
+    & > * {
+        z-index: 2;
+    }
+
+    &__title {
+        font-family: $ideal-sans;
+        font-size: $type-size-300;
+        font-weight: 500;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    &__book-cover {
+        img {
+            max-width: 12rem;
+            margin: 0 auto;
+        }
+    }
+
+    &__copy {
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-400;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__input {
+        color: $gray-950;
+        font-family: $sometype-mono;
+        border: 1px solid $gray-500;
+        padding: $spacing-300 $spacing-400;
+        width: 100%;
+        font-size: $type-size-200;
+
+        @include placeholder {
+            font-style: italic;
+            color: $gray-500;
+        }
+
+        &:focus {
+            outline-color: $blue;
+        }
+    }
+
+    &__btn {
+        appearance: none;
+        border: none;
+        display: inline-block;
+        font-family: $ideal-sans;
+        text-transform: uppercase;
+        background: $navy;
+        color: $gray-0;
+        line-height: 0.875em;
+        font-size: 0.875rem;
+        padding: $spacing-400 $spacing-600;
+        margin: 0 auto;
+        &:focus {
+            outline-color: $blue;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

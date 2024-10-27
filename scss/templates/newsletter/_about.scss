@@ -1,0 +1,36 @@
+@use "./abstracts" as *;
+
+.about-newsletter {
+    border-top: 0.25rem solid $goldenrod;
+    background: #fdfcf9;
+    padding: $spacing-700 0;
+
+    &__wrapper {
+        display: grid;
+        gap: $spacing-600;
+
+        @include mq(tablet) {
+            grid-template-columns: 1fr 3fr;
+        }
+
+        @include mq(desktop-small) {
+            grid-column: 4 / span 8;
+        }
+    }
+
+    &__image {
+        img {
+            max-width: 18rem;
+            margin: 0 auto;
+        }
+    }
+
+    &__headline {
+        font-size: $type-size-700;
+        font-weight: 500;
+    }
+
+    &__copy {
+        padding-top: $spacing-200;
+    }
+}

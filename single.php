@@ -31,12 +31,12 @@
                         Back to Main
                     </a>
                     <a href="<?php 
-                        $next_post = get_adjacent_post(false, '', false);
-                        if ($next_post) {
-                            echo get_permalink($next_post);
+                        $prev_post = get_adjacent_post(false, '', true);
+                        if ($prev_post) {
+                            echo get_permalink($prev_post);
                         } else {
-                            $first_post = get_posts(array('posts_per_page' => 1, 'order' => 'ASC'));
-                            echo get_permalink($first_post[0]->ID);
+                            $last_post = get_posts(array('posts_per_page' => 1, 'order' => 'DESC'));
+                            echo get_permalink($last_post[0]->ID);
                         }
                     ?>" class="article__pagination-link next-post">
                         Next Post

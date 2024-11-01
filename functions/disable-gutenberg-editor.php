@@ -10,6 +10,8 @@ function bearsmith_disable_editor( $id = false ) {
 
 	$excluded_templates = array(
 		'templates/home.php',
+		'templates/contact.php',
+		'templates/photo-gallery-main.php',
 	);
 
 	$excluded_ids = array(

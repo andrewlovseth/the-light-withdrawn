@@ -37,6 +37,8 @@
             display: inline-block;
             &:hover {
                 text-decoration: underline;
+                text-decoration-thickness: 1px;
+                text-underline-offset: 2px;
             }
         }
 
@@ -46,7 +48,7 @@
 
         .small-caps {
             font-variant: small-caps;
-            font-weight: 600;
+            font-weight: 400;
             letter-spacing: 0.15em;
         }
     }
@@ -77,6 +79,8 @@
 
             &:hover {
                 text-decoration: underline;
+                text-decoration-thickness: 1px;
+                text-underline-offset: 2px;
             }
         }
 
@@ -86,7 +90,7 @@
 
         .small-caps {
             font-variant: small-caps;
-            font-weight: 600;
+            font-weight: 400;
             letter-spacing: 0.15em;
             font-size: $type-size-500;
         }
@@ -94,7 +98,7 @@
         .part-title {
             display: block;
             font-variant: small-caps;
-            font-weight: 500;
+            font-weight: 400;
             letter-spacing: 0.05em;
             font-size: $type-size-600;
         }

@@ -338,7 +338,7 @@ body.modal-open {
     &__title {
         display: inline-block;
         border: 1px solid $gray-1000;
-        padding: $spacing-400 $spacing-400 $spacing-300;
+        padding: $spacing-300 $spacing-400 $spacing-200;
         line-height: 1.15;
         background: $gray-0;
         position: relative;
@@ -349,10 +349,11 @@ body.modal-open {
         text-transform: uppercase;
         font-family: $ideal-sans;
         letter-spacing: 0.2em;
+        font-weight: normal;
 
         @include mq(tablet) {
             text-wrap: balance;
-            padding: $spacing-400 $spacing-600 $spacing-300;
+            padding: $spacing-300 $spacing-600 $spacing-200;
         }
     }
 }

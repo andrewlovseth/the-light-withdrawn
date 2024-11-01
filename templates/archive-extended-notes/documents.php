@@ -49,7 +49,6 @@
     </div>
 
     <div class="documents__list extended-notes__list">
-        <div class="documents__rule"></div>
 
         <form id="batch-download-form" method="post" action="<?php echo admin_url('admin-ajax.php'); ?>">
             <input type="hidden" name="action" value="batch_download_extended_notes">
@@ -74,6 +73,10 @@
                             <?php get_template_part('templates/archive-extended-notes/single-note', null, $args); ?>
                         </label>
                     </div>
+
+                <?php elseif(get_row_layout() == 'rule'): ?>
+                    
+                    <div class="documents__rule"></div>
 
                 <?php endif; ?>
 

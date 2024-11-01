@@ -22,8 +22,9 @@
     &__photo-caption {
         .small-caps {
             font-variant: small-caps;
-            letter-spacing: 0.1em;
-            font-weight: 600;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+            font-family: $ideal-sans;
         }
     }
 }

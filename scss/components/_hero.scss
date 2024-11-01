@@ -29,19 +29,26 @@
             text-align: center;
             background: $cream;
             border: $spacing-100 solid $blue;
-            padding: $spacing-600;
             width: 100%;
             max-width: 55rem;
             display: grid;
             gap: $spacing-500;
+            padding: $spacing-600;
+
+            @include mq(desktop-small) {
+                padding: $spacing-700 $spacing-800;
+            }
         }
     }
 
     &__title {
-        font-size: $type-size-900;
-        letter-spacing: 0.15em;
-        font-variant: small-caps;
-        color: $gray-950;
         font-weight: 500;
+        font-size: $type-size-700;
+        font-variant: small-caps;
+        letter-spacing: 0.1em;
+    }
+
+    &__copy {
+        text-wrap: pretty;
     }
 }

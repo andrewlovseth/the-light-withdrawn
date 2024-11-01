@@ -2,11 +2,6 @@
 
 .appendices {
     &__list {
-        padding-top: $spacing-600;
-
-        @include mq(desktop-small) {
-            padding-top: $spacing-800;
-        }
     }
 }
 
@@ -20,7 +15,7 @@
         font-size: $type-size-300;
         letter-spacing: 0.25em;
         padding-bottom: $spacing-200;
-        font-weight: 600;
+        font-weight: 500;
     }
 
     &__link {
@@ -29,6 +24,14 @@
 
         &:hover {
             text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
         }
+    }
+}
+
+.post-type-archive-appendices {
+    .hero__info-wrapper {
+        width: auto;
     }
 }

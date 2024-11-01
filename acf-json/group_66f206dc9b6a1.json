@@ -204,6 +204,34 @@
                             ],
                             "min": "",
                             "max": ""
+                        },
+                        "layout_672515b4437bd": {
+                            "key": "layout_672515b4437bd",
+                            "name": "rule",
+                            "label": "Rule",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_672515bf437c3",
+                                    "label": "Message",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "message",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Double Rule Goes Here",
+                                    "new_lines": "wpautop",
+                                    "esc_html": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
                     },
                     "min": "",
@@ -258,5 +286,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728373031
+    "modified": 1730483677
 }

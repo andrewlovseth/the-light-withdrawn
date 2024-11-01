@@ -48,7 +48,6 @@
     </div>
 
     <div class="documents__list appendices__list">
-        <div class="documents__rule"></div>
 
         <form id="batch-download-form" method="post" action="<?php echo admin_url('admin-ajax.php'); ?>">
             <input type="hidden" name="action" value="batch_download_pdfs">

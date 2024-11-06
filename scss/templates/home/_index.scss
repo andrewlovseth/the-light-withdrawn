@@ -8,10 +8,6 @@
 
 @forward "author";
 
-@use "./abstracts" as *;
+@forward "media";
 
-.page-template-home {
-    .site-content {
-        padding-bottom: $spacing-600;
-    }
-}
+@forward "newsletter";

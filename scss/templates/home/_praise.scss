@@ -23,6 +23,10 @@
         max-height: 100%;
     }
 
+    &-pagination {
+        z-index: 1000 !important;
+    }
+
     &-pagination-bullet {
         --swiper-pagination-bullet-size: 16px;
         --swiper-pagination-bullet-horizontal-gap: 8px;
@@ -39,14 +43,31 @@
 }
 
 .praise {
-    padding: 0 0 $spacing-800 0;
-    &__image {
-        aspect-ratio: 1200 / 276;
+    padding: $spacing-700 0;
+    background: $navy;
+    color: $gray-0;
+    border-top: $spacing-200 solid $blue;
+    border-bottom: $spacing-200 solid $blue;
+    margin-bottom: $spacing-800;
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    &__quote {
+        font-size: $type-size-700;
+        line-height: 1.2;
+        text-align: center;
+        font-weight: 400;
+        font-family: $garamond-display;
+        max-width: 62.5rem;
+        margin: 0 auto;
+        text-wrap: pretty;
+    }
+
+    &__source {
+        max-width: 48rem;
+        margin: 0 auto;
+        text-align: center;
+        font-size: $type-size-600;
+        font-weight: 400;
+        padding: $spacing-600 0 $spacing-700;
+        text-wrap: pretty;
     }
 }

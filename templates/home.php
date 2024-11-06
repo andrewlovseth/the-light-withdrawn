@@ -16,6 +16,10 @@ get_header(); ?>
 
     <?php get_template_part('templates/home/events'); ?>
 
+    <?php get_template_part('templates/home/media'); ?>
+
     <?php get_template_part('templates/home/author'); ?>
+
+    <?php get_template_part('templates/home/newsletter'); ?>
 
 <?php get_footer(); ?>

@@ -1,0 +1,108 @@
+@use "./abstracts" as *;
+.newsletter-home {
+    margin-top: $spacing-800;
+    border-top: $spacing-100 solid $goldenrod;
+    padding: $spacing-600 0;
+    background: url(img/newsletter-home-bg.jpg) repeat top center / 100% auto;
+
+    &__inset {
+        background: #d0eaef;
+        box-shadow: 4px 4px 12px rgba($gray-1000, 0.25);
+        padding: $spacing-600;
+        display: grid;
+        gap: $spacing-400 $spacing-600;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "book-cover"
+            "info";
+
+        @include mq(tablet) {
+            grid-template-rows: unset;
+            grid-template-columns: 1fr auto;
+            grid-template-areas: "info book-cover";
+            align-items: center;
+        }
+
+        @include mq(desktop-small) {
+            grid-column: 4 / span 8;
+        }
+
+        @include mq(desktop-large) {
+            grid-column: 5 / span 6;
+        }
+    }
+
+    &__book-cover {
+        grid-area: book-cover;
+        img {
+            max-width: 8rem;
+        }
+    }
+
+    &__info {
+        grid-area: info;
+        display: grid;
+        gap: $spacing-400;
+        align-items: start;
+    }
+
+    &__headline {
+        font-family: $ideal-sans;
+        font-size: $type-size-400;
+        font-weight: 500;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        text-wrap: balance;
+    }
+
+    .subscribe {
+        &__form {
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+        }
+
+        &__input {
+            color: $gray-950;
+            font-family: $sometype-mono;
+            border: 1px solid $gray-500;
+            border-right: none;
+            padding: $spacing-300 $spacing-400;
+            width: 100%;
+            font-size: $type-size-200;
+
+            @include placeholder {
+                font-style: italic;
+                color: $gray-500;
+            }
+
+            &:focus {
+                outline-color: $blue;
+            }
+        }
+
+        &__btn {
+            appearance: none;
+            border: none;
+            display: inline-block;
+            font-family: $ideal-sans;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: #c6aeb8;
+            border: 1px solid $gray-500;
+            border-left: none;
+            color: $gray-1000;
+            line-height: 0.875em;
+            font-size: 0.875rem;
+            padding: $spacing-400 $spacing-400;
+            margin: 0 auto;
+            &:focus {
+                outline-color: $blue;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

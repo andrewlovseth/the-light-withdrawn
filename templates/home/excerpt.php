@@ -28,7 +28,7 @@
             <?php echo $copy; ?>
         </div>
 
-        <a href="<?php echo $file['url']; ?>" class="excerpt__link">Keep Reading >></a>
+        <a href="<?php echo $file['url']; ?>" class="excerpt__link" target="window">Keep Reading >></a>
     </div>
 
 </section>

@@ -15,47 +15,46 @@ export function toggleFootnotes() {
                 <span class="toggle-footnotes__btn-label">View</span>
                 </span>
             `;
-        }
+            const btnLabel = toggleButton.querySelector(".toggle-footnotes__btn-label");
 
-        const btnLabel = toggleButton.querySelector(".toggle-footnotes__btn-label");
+            // Update button label based on visibility
+            if (btnLabel) {
+                // Update button text when clicked
+                toggleButton.addEventListener("click", () => {
+                    btnLabel.textContent = footnotesList.style.display === "block" ? "Hide" : "View";
+                });
+            }
 
-        // Update button label based on visibility
-        if (btnLabel) {
-            // Update button text when clicked
-            toggleButton.addEventListener("click", () => {
-                btnLabel.textContent = footnotesList.style.display === "block" ? "Hide" : "View";
-            });
-        }
+            // Check if elements exist before proceeding
+            if (toggleButton && footnotesList) {
+                // Initially hide the footnotes
+                footnotesList.style.display = "none";
 
-        // Check if elements exist before proceeding
-        if (toggleButton && footnotesList) {
-            // Initially hide the footnotes
-            footnotesList.style.display = "none";
-
-            toggleButton.addEventListener("click", function (e) {
-                e.preventDefault();
-                // Toggle visibility using height and opacity for smooth transitions
-                if (footnotesList.style.display === "none") {
-                    footnotesList.style.display = "block";
-                    btnLabel.textContent = "Hide";
-                } else {
-                    footnotesList.style.display = "none";
-                    btnLabel.textContent = "View";
-                }
-            });
-        }
-
-        // Add click handlers for individual footnote links
-        if (footnoteLinks) {
-            footnoteLinks.forEach((link) => {
-                link.addEventListener("click", function (e) {
-                    // Show footnotes list if hidden
+                toggleButton.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    // Toggle visibility using height and opacity for smooth transitions
                     if (footnotesList.style.display === "none") {
                         footnotesList.style.display = "block";
                         btnLabel.textContent = "Hide";
+                    } else {
+                        footnotesList.style.display = "none";
+                        btnLabel.textContent = "View";
                     }
                 });
-            });
+            }
+
+            // Add click handlers for individual footnote links
+            if (footnoteLinks) {
+                footnoteLinks.forEach((link) => {
+                    link.addEventListener("click", function (e) {
+                        // Show footnotes list if hidden
+                        if (footnotesList.style.display === "none") {
+                            footnotesList.style.display = "block";
+                            btnLabel.textContent = "Hide";
+                        }
+                    });
+                });
+            }
         }
     });
 }

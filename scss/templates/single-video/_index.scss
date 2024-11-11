@@ -14,8 +14,23 @@ body.single-video {
 .video {
     padding: $spacing-800 0;
 
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__pagination {
+        display: flex;
+        gap: $spacing-800;
+    }
+
     &__title {
         font-weight: 400;
         font-size: $type-size-700;
+    }
+
+    .photo__info-utilities-link {
+        color: $blue;
     }
 }

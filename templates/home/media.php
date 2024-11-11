@@ -2,36 +2,39 @@
 
     $media = get_field('media');
     $header = $media['header'];
+    $quotes = $media['quotes'];
 
-if(have_rows('media')): while(have_rows('media')): the_row(); ?>
+?>
  
-    <section class="media | content-grid">
-        <div class="fancy-header">
-            <h3 class="fancy-header__title"><?php echo $header; ?></h3>
-        </div>
+<section class="media | content-grid">
+    <div class="fancy-header">
+        <h3 class="fancy-header__title"><?php echo $header; ?></h3>
+    </div>
 
-        <div class="media__grid">
-
-            <?php if(have_rows('quotes')): while(have_rows('quotes')): the_row(); ?>
-
+    <div class="media__grid">
+        <?php if( $quotes ): ?>
+            <?php foreach( $quotes as $q ): ?>
                 <?php
-                    $quote = get_sub_field('quote');
-                    $logo = get_sub_field('logo');
-                    $link = get_sub_field('link');
-                    $color = get_sub_field('color');
+                    $quote = get_field('quote', $q->ID);
+                    $logo = get_field('logo', $q->ID);
+                    $link = get_field('link', $q->ID);
                 ?>
 
-                <div class="media__item" style="background-color: <?php echo $color; ?>">
+                <div class="media__item">
                     <div class="media__quote"><?php echo $quote; ?></div>
                     <div class="media__logo"><?php echo wp_get_attachment_image($logo['ID'], 'full'); ?></div>
                     <?php if($link): ?>
                         <a href="<?php echo $link['url']; ?>" class="media__link" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?></a>
                     <?php endif; ?>
                 </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
 
-            <?php endwhile; endif; ?>
+    </div>
 
-        </div>
-    </section>
+    <div class="media__cta">
+        <a class="media__cta-link" href="<?php echo site_url('/media/'); ?>">View All Media >></a>
+    </div>
 
-<?php endwhile; endif; ?>
+</section>
+

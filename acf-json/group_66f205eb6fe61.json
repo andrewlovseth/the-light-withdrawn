@@ -567,7 +567,7 @@
                     "label": "Quotes",
                     "name": "quotes",
                     "aria-label": "",
-                    "type": "repeater",
+                    "type": "relationship",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -576,102 +576,21 @@
                         "class": "",
                         "id": ""
                     },
-                    "layout": "table",
-                    "pagination": 0,
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "+ Add Quote",
-                    "rows_per_page": 20,
-                    "sub_fields": [
-                        {
-                            "key": "field_672be1fc7e701",
-                            "label": "Quote",
-                            "name": "quote",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 0,
-                            "rows": "",
-                            "placeholder": "",
-                            "new_lines": "",
-                            "parent_repeater": "field_672be1f17e700"
-                        },
-                        {
-                            "key": "field_672be2057e702",
-                            "label": "Logo",
-                            "name": "logo",
-                            "aria-label": "",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": "",
-                            "allow_in_bindings": 0,
-                            "preview_size": "medium",
-                            "parent_repeater": "field_672be1f17e700"
-                        },
-                        {
-                            "key": "field_672be20f7e703",
-                            "label": "Link",
-                            "name": "link",
-                            "aria-label": "",
-                            "type": "link",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "allow_in_bindings": 0,
-                            "parent_repeater": "field_672be1f17e700"
-                        },
-                        {
-                            "key": "field_672be25d98982",
-                            "label": "Color",
-                            "name": "color",
-                            "aria-label": "",
-                            "type": "color_picker",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "enable_opacity": 0,
-                            "return_format": "string",
-                            "allow_in_bindings": 0,
-                            "parent_repeater": "field_672be1f17e700"
-                        }
-                    ]
+                    "post_type": [
+                        "press"
+                    ],
+                    "post_status": "",
+                    "taxonomy": "",
+                    "filters": [
+                        "search"
+                    ],
+                    "return_format": "object",
+                    "min": "",
+                    "max": "",
+                    "allow_in_bindings": 1,
+                    "elements": "",
+                    "bidirectional": 0,
+                    "bidirectional_target": []
                 }
             ]
         },
@@ -889,5 +808,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731085303
+    "modified": 1731355658
 }

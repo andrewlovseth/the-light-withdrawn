@@ -1,11 +1,11 @@
 {
-    "key": "group_673244ed8457d",
-    "title": "Post Type: Video",
+    "key": "group_673260a811971",
+    "title": "Post Type: Press",
     "fields": [
         {
-            "key": "field_673244eddbc53",
-            "label": "Poster",
-            "name": "poster",
+            "key": "field_673260a833e7c",
+            "label": "Logo",
+            "name": "logo",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -29,11 +29,11 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_6732680743b4f",
-            "label": "YouTube ID",
-            "name": "youtube_id",
+            "key": "field_673260c233e7e",
+            "label": "Quote",
+            "name": "quote",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -45,9 +45,26 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
+            "rows": "",
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": "br"
+        },
+        {
+            "key": "field_673260b833e7d",
+            "label": "Link",
+            "name": "link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -55,7 +72,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "video"
+                "value": "press"
             }
         ]
     ],
@@ -81,5 +98,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731357398
+    "modified": 1731355097
 }

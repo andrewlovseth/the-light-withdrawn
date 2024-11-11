@@ -1,0 +1,21 @@
+@use "./abstracts" as *;
+
+body.single-video {
+    background: $navy;
+    color: $gray-0;
+    border-top: none;
+
+    .site-header,
+    .site-footer {
+        display: none;
+    }
+}
+
+.video {
+    padding: $spacing-800 0;
+
+    &__title {
+        font-weight: 400;
+        font-size: $type-size-700;
+    }
+}

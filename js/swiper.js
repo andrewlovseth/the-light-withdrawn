@@ -5,7 +5,7 @@ export function praiseCarousel() {
         // Optional parameters
         direction: "horizontal",
         loop: true,
-        speed: 3000,
+        speed: 1500,
         autoplay: {
             delay: 10000,
         },
@@ -18,5 +18,6 @@ export function praiseCarousel() {
             el: ".swiper-pagination",
             clickable: true,
         },
+        allowTouchMove: false,
     });
 }

@@ -11,7 +11,7 @@ import { setupPhotoVisibilityToggle } from "./photoVisibility.js?v=1.2";
 import { setupPasswordForm, checkPassword } from "./passwordForm.js?v=1.6";
 import { setupPhotoInfoToggle } from "./photoInfoToggle.js?v=1.2";
 import { setupPasswordVisibilityOnLoad } from "./passwordVisibility.js?v=1.1"; // Assuming it's in a separate file
-import { praiseCarousel } from "./swiper.js?v=1.2";
+import { praiseCarousel } from "./swiper.js?v=1.3";
 import { initBatchDownload } from "./batch-download.js?v=1.1";
 import { toggleFootnotes } from "./footnotes.js?v=1.3";
 

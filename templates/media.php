@@ -35,13 +35,18 @@ get_header(); ?>
                     $quote = get_field('quote');
                     $logo = get_field('logo');
                     $link = get_field('link');
+                    $title = get_the_title();
                 ?>
 
-                <div class="media__item">
+                <div class="media__item <?php echo sanitize_title_with_dashes($title); ?>">
                     <div class="media__quote"><?php echo $quote; ?></div>
                     <div class="media__logo"><?php echo wp_get_attachment_image($logo['ID'], 'full'); ?></div>
                     <?php if($link): ?>
                         <a href="<?php echo $link['url']; ?>" class="media__link" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?></a>
+                    <?php endif; ?>
+
+                    <?php if($title == 'Kirkus Reviews'):  ?>
+                        <div class="kirkus-star"><img src="<?php echo get_template_directory_uri(); ?>/img/kirkus-star.png" alt="Kirkus Star" /></div>
                     <?php endif; ?>
                 </div>
 

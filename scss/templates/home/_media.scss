@@ -15,6 +15,7 @@
         align-items: center;
         gap: $spacing-300;
         padding: $spacing-600;
+        position: relative;
 
         &:nth-child(4n + 1) {
             background: $blue;
@@ -86,5 +87,35 @@
         &:hover {
             border-color: $blue;
         }
+    }
+}
+
+.the-wall-street-journal {
+    .media__quote {
+        font-size: $type-size-600;
+    }
+}
+
+.kirkus-reviews {
+    .media__logo {
+        height: 1.75rem;
+    }
+}
+
+.new-york-journal-of-books {
+    .media__logo {
+        height: 2.25rem;
+    }
+}
+
+.kirkus-star {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+
+    img {
+        width: 100%;
     }
 }

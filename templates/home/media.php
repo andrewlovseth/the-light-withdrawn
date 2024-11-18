@@ -18,9 +18,10 @@
                     $quote = get_field('quote', $q->ID);
                     $logo = get_field('logo', $q->ID);
                     $link = get_field('link', $q->ID);
+                    $title = get_the_title($q->ID);
                 ?>
 
-                <div class="media__item">
+                <div class="media__item <?php echo sanitize_title_with_dashes($title); ?>">
                     <div class="media__quote"><?php echo $quote; ?></div>
                     <div class="media__logo"><?php echo wp_get_attachment_image($logo['ID'], 'full'); ?></div>
                     <?php if($link): ?>

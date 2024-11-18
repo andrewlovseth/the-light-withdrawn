@@ -35,6 +35,6 @@
     </div>
 
     <div class="events__cta-all">
-        <a class="events__cta-link" href="<?php echo site_url('/events/'); ?>">View All Upcoming Events >></a>
+        <a class="events__cta-link" href="<?php echo site_url('/events/'); ?>">View All Events >></a>
     </div>
 </section>

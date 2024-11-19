@@ -1,0 +1,139 @@
+@use "./abstracts" as *;
+
+.podcasts {
+    padding-bottom: $spacing-800;
+    &__copy {
+        text-align: center;
+    }
+
+    &__list {
+        display: grid;
+        gap: $spacing-600;
+
+        @include mq(desktop-small) {
+            grid-column: 3 / span 10;
+        }
+
+        @include mq(desktop-medium) {
+            grid-column: 4 / span 8;
+        }
+    }
+}
+
+.podcast {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 5fr);
+    gap: $spacing-600;
+
+    & + .podcast {
+        padding-top: $spacing-600;
+        border-top: 1px solid $gray-500;
+    }
+
+    &__cover {
+        aspect-ratio: 1 / 1;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__title {
+        font-family: $ideal-sans;
+        font-weight: 400;
+        font-size: $type-size-400;
+        padding-bottom: $spacing-200;
+    }
+
+    &__show_and_date {
+        font-family: $ideal-sans;
+        font-weight: 400;
+        font-size: $type-size-300;
+    }
+
+    &__description {
+        padding-top: $spacing-500;
+    }
+
+    &__listen {
+        padding-top: $spacing-500;
+        display: flex;
+        gap: $spacing-300;
+        align-items: center;
+
+        &-label {
+            font-family: $ideal-sans;
+            font-size: $type-size-200;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+
+        &-link {
+            display: block;
+            line-height: 1;
+
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+
+            &.apple-podcasts {
+                rect {
+                    transition: filter 200ms ease;
+                    filter: grayscale(100%) brightness(0%);
+                }
+
+                &:hover {
+                    rect {
+                        filter: unset;
+                    }
+                }
+            }
+
+            &.spotify {
+                path {
+                    transition: filter 200ms ease;
+                    filter: grayscale(100%) brightness(0%);
+                }
+
+                &:hover {
+                    path {
+                        filter: unset;
+                    }
+                }
+            }
+
+            &.youtube {
+                rect {
+                    transition: filter 200ms ease;
+                    filter: grayscale(100%) brightness(0%);
+                }
+
+                &:hover {
+                    rect {
+                        filter: unset;
+                    }
+                }
+            }
+
+            &.amazon-music {
+                .background {
+                    transition: filter 200ms ease;
+                    filter: grayscale(100%) brightness(0%);
+                }
+
+                &:hover {
+                    .background {
+                        filter: unset;
+                    }
+                }
+            }
+        }
+    }
+}

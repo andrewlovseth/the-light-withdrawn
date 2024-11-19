@@ -119,3 +119,29 @@
         width: 100%;
     }
 }
+
+.kirkus-text {
+    text-align: center;
+    font-family: $ideal-sans;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    font-size: $type-size-100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-300;
+
+    @include mq(desktop-small) {
+        font-size: $type-size-200;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        width: $spacing-700;
+        height: 1px;
+        background: $gray-1000;
+    }
+}

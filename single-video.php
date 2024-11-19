@@ -30,14 +30,14 @@
                             <path d="M27.8462 49L2 25L27.8462 1" stroke="#8ACAD7" stroke-width="5" stroke-linecap="round"/>
                         </svg>
                         
-                        <span class="video__pagination-label">Previous</span>
+                        <span class="video__pagination-label">Previous Video</span>
                     </a>
                 </div>
 
 
                 <div class="video__next">
                     <a href="<?php echo esc_url($next_post_link); ?>" class="video__pagination-link">
-                        <span class="video__pagination-label">Next </span>
+                        <span class="video__pagination-label">Next Video</span>
 
                         <svg width="6" height="12" viewBox="0 0 29 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.00004 1L26.8462 25L1.00004 49" stroke="#8ACAD7" stroke-width="5" stroke-linecap="round"/>

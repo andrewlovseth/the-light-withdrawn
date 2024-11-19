@@ -39,8 +39,15 @@ get_header(); ?>
                 ?>
 
                 <div class="media__item <?php echo sanitize_title_with_dashes($title); ?>">
+
+                    <?php if($title == 'Kirkus Reviews'):  ?>
+                        <div class="kirkus-text">Starred Review</div>
+                    <?php endif; ?>
+
                     <div class="media__quote"><?php echo $quote; ?></div>
+
                     <div class="media__logo"><?php echo wp_get_attachment_image($logo['ID'], 'full'); ?></div>
+                    
                     <?php if($link): ?>
                         <a href="<?php echo $link['url']; ?>" class="media__link" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?></a>
                     <?php endif; ?>

@@ -41,7 +41,7 @@ get_header(); ?>
                 <div class="media__item <?php echo sanitize_title_with_dashes($title); ?>">
 
                     <?php if($title == 'Kirkus Reviews'):  ?>
-                        <div class="kirkus-text">Starred Review</div>
+                        <div class="kirkus-text">Starred Review | Best Nonfiction Books of 2024</div>
                     <?php endif; ?>
 
                     <div class="media__quote"><?php echo $quote; ?></div>

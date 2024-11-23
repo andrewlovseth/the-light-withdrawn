@@ -36,12 +36,14 @@ get_header(); ?>
                     $logo = get_field('logo');
                     $link = get_field('link');
                     $title = get_the_title();
+                    $note = get_field('note');
+                    $icon = get_field('icon');
                 ?>
 
                 <div class="media__item <?php echo sanitize_title_with_dashes($title); ?>">
 
-                    <?php if($title == 'Kirkus Reviews'):  ?>
-                        <div class="kirkus-text">Starred Review | Best Nonfiction Books of 2024</div>
+                    <?php if($note):  ?>
+                        <div class="media__note"><?php echo $note; ?></div>
                     <?php endif; ?>
 
                     <div class="media__quote"><?php echo $quote; ?></div>
@@ -52,8 +54,8 @@ get_header(); ?>
                         <a href="<?php echo $link['url']; ?>" class="media__link" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?></a>
                     <?php endif; ?>
 
-                    <?php if($title == 'Kirkus Reviews'):  ?>
-                        <div class="kirkus-star"><img src="<?php echo get_template_directory_uri(); ?>/img/kirkus-star.png" alt="Kirkus Star" /></div>
+                    <?php if($icon  ):  ?>
+                        <div class="media__icon"><?php echo wp_get_attachment_image($icon['ID'], 'full'); ?></div>
                     <?php endif; ?>
                 </div>
 

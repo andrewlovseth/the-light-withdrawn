@@ -88,6 +88,35 @@
             border-color: $blue;
         }
     }
+
+    &__note {
+        text-align: center;
+        font-family: $ideal-sans;
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        font-size: $type-size-100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-300;
+
+        @include mq(desktop-small) {
+            font-size: $type-size-200;
+        }
+    }
+
+    &__icon {
+        width: 4rem;
+        height: 4rem;
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+
+        img {
+            width: 100%;
+        }
+    }
 }
 
 .the-wall-street-journal {
@@ -106,29 +135,4 @@
     .media__logo {
         height: 2.25rem;
     }
-}
-
-.kirkus-star {
-    width: 4rem;
-    height: 4rem;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-
-    img {
-        width: 100%;
-    }
-}
-
-.kirkus-text {
-    text-align: center;
-    font-family: $ideal-sans;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    font-size: $type-size-100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: $spacing-300;
 }

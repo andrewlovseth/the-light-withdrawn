@@ -25,7 +25,7 @@ get_header(); ?>
             $query = new WP_Query(array(
                 'post_type'      => 'press',
                 'posts_per_page' => -1,
-                'orderby'        => 'date',
+                'orderby'        => 'menu_order',
                 'order'          => 'ASC'
             ));
 

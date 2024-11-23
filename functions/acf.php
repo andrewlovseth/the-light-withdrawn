@@ -50,3 +50,14 @@ function podcast_custom_post_type_icon() {
     <?php
 }
 add_action('admin_head', 'podcast_custom_post_type_icon');
+
+
+// Force the press post type to be ordered by menu order
+add_action('pre_get_posts', function ($query) {
+    // Check if we're in the admin area and on the correct post type list screen
+    if (is_admin() && $query->is_main_query() && $query->get('post_type') === 'press') {
+        // Set the order and orderby parameters
+        $query->set('orderby', 'menu_order');
+        $query->set('order', 'ASC'); // Change to DESC if you want descending order
+    }
+});

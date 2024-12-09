@@ -1,6 +1,6 @@
 {
     "key": "group_673cd0ec04b90",
-    "title": "Post Type: Podcast",
+    "title": "Post Type: Interview",
     "fields": [
         {
             "key": "field_673cd1b869830",
@@ -69,6 +69,27 @@
             "toolbar": "full",
             "media_upload": 0,
             "delay": 0
+        },
+        {
+            "key": "field_675772371f1fd",
+            "label": "Action Label",
+            "name": "action_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Listen",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_673cd137a214e",
@@ -192,5 +213,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732040067
+    "modified": 1733784293
 }

@@ -1,6 +1,6 @@
 {
     "key": "group_673cd2099f6ab",
-    "title": "Options: Podcasts",
+    "title": "Options: Interview",
     "fields": [
         {
             "key": "field_673cd21e28ae0",
@@ -68,7 +68,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "options-for-podcasts"
+                "value": "options-for-interviews"
             }
         ]
     ],
@@ -96,5 +96,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732039227
+    "modified": 1733784359
 }

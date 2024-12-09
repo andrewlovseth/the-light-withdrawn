@@ -5,6 +5,7 @@
     $title = get_field('title');
     $description = get_field('description');
     $cover = get_field('cover');
+    $action_label = get_field('action_label');
 
     $links = get_field('links');
     $apple_podcasts = $links['apple_podcasts'];
@@ -29,7 +30,7 @@
 
         <?php if($apple_podcasts || $spotify || $youtube || $amazon_music): ?>
             <div class="podcast__listen">
-                <h5 class="podcast__listen-label">Listen</h5>
+                <h5 class="podcast__listen-label"><?php echo $action_label; ?></h5>
 
                 <?php if($apple_podcasts): ?>
                     <a href="<?php echo $apple_podcasts; ?>" class="podcast__listen-link apple-podcasts" target="_blank"><?php get_template_part('svg/icon-apple-podcasts'); ?></a>

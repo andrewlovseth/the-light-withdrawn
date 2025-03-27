@@ -21,7 +21,7 @@
         <h3 class="event__date-time">
             <?php if($date_object): ?>
                 <span class="event__date">
-                    <?php echo $date_object->format('M. j, Y'); ?>
+                    <?php echo $date_object->format('M j, Y'); ?>
                 </span>
             <?php endif; ?>
 

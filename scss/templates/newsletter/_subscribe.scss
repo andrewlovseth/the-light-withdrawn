@@ -91,4 +91,95 @@
             cursor: pointer;
         }
     }
+
+    div.wpforms-container-full:not(:empty) {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+// WPForms → subscribe form mapping (all contexts)
+// Uses div.wpforms-container-full to match WPForms plugin specificity
+div.wpforms-container-full {
+    --wpforms-field-border-radius: 0;
+    --wpforms-button-border-radius: 0;
+    --wpforms-button-background-color: #{$navy};
+    --wpforms-button-text-color: #{$gray-0};
+    --wpforms-button-background-color-alt: #{$navy};
+    --wpforms-button-border-style: none;
+    --wpforms-button-border-size: 0;
+    --wpforms-button-size-height: 43px;
+
+    .wpforms-field {
+        padding: 0;
+    }
+
+    .wpforms-field-text {
+        display: none !important;
+    }
+
+    .wpforms-submit-container {
+        padding: 0;
+        margin-top: 0;
+    }
+}
+
+div.wpforms-container-full .wpforms-form {
+    input.wpforms-field-medium {
+        max-width: 100%;
+    }
+
+    input[type="email"] {
+        color: $gray-950;
+        font-family: $sometype-mono;
+        border: 1px solid $gray-500;
+        padding: $spacing-300 $spacing-400;
+        width: 100%;
+        font-size: $type-size-200;
+
+        @include placeholder {
+            font-style: italic;
+            color: $gray-500;
+            opacity: 1;
+        }
+
+        &:focus {
+            outline-color: $blue;
+        }
+    }
+
+    button[type="submit"] {
+        appearance: none;
+        font-family: $ideal-sans;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        line-height: 0.875em;
+        font-size: 0.875rem;
+        padding: 0 $spacing-600;
+        height: 43px;
+        margin: 0 auto;
+        display: block;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+div.wpforms-container-full {
+    .wpforms-confirmation-container-full,
+    div[submit-success] > .wpforms-confirmation-container-full:not(.wpforms-redirection-message) {
+        display: block;
+        margin: 0 auto;
+        background-color: #16a34a;
+        border: unset;
+        padding: $spacing-200;
+        text-align: center;
+        font-family: $sometype-mono;
+        font-size: $type-size-300;
+
+        p {
+            color: $gray-0;
+        }
+    }
 }

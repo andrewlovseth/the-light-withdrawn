@@ -1,3 +1,4 @@
+<?php if (get_field('show_events')) : ?>
 <section class="events content-grid">
     <div class="fancy-header">
         <h3 class="fancy-header__title">Coming Events</h3>
@@ -38,3 +39,4 @@
         <a class="events__cta-link" href="<?php echo site_url('/events/'); ?>">View All Events >></a>
     </div>
 </section>
+<?php endif; ?>

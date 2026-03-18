@@ -9,14 +9,11 @@
 get_header(); ?>
 
     <section class="page-header">
-        <h1 class="page-title">Media</h1>
+        <h1 class="page-title">Reviews</h1>
     </section>
 
 
     <section class="media | content-grid">
-        <div class="fancy-header">
-            <h1 class="fancy-header__title">Book Reviews</h1>
-        </div>
 
         <div class="media__grid">
 

@@ -34,7 +34,7 @@
     </div>
 
     <div class="media__cta">
-        <a class="media__cta-link" href="<?php echo site_url('/media/'); ?>">View All Media >></a>
+        <a class="media__cta-link" href="<?php echo site_url('/reviews/'); ?>">View All Reviews >></a>
     </div>
 
 </section>

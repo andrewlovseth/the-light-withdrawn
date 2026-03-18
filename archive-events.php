@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
     <section class="page-header">
-        <h1 class="page-title">Events</h1>
+        <h1 class="page-title">Media & Events</h1>
     </section>
 
     <?php get_template_part('templates/archive-events/podcasts'); ?>

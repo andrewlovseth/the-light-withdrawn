@@ -19,7 +19,7 @@
         .wpforms-container-full {
             --wpforms-field-size-input-spacing: 12px;
             --wpforms-button-background-color: #8acad7;
-            --wpforms-button-text-color: #313948;
+            --wpforms-button-text-color: #fff;
             --wpforms-button-border-radius: 0;
             --wpforms-button-size-padding-h: 24px;
             --wpforms-field-border-radius: 0;
@@ -49,7 +49,7 @@
                 button[type="submit"] {
                     font-family: $ideal-sans;
                     text-transform: uppercase;
-                    color: $navy;
+                    color: $gray-0;
                     font-size: $type-size-300;
                     letter-spacing: 0.05em;
                     margin: 0 auto;
